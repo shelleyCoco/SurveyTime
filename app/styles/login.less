@@ -1,0 +1,127 @@
+//1.变量    //变量  用@设置变量      变量允许我们单独定义一系列通用的样式，然后在需要的时候去调用。所以在做全局样式调整的时候我们可能只需要修改几行代码就可以了
+@color1: #fff;
+@color: #000;
+@width:100px;
+@height:100px;
+.header {
+    width: @width;
+    height: @height;
+    color: @color1;
+    background: @color;
+}
+//2.嵌套    //我们可以在一个选择器中嵌套另一个选择器来实现继承，这样很大程度减少了代码量，并且代码看起来更加的清晰。
+
+.hearder1 {
+    width: 200px;
+    height: 100px;
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        color: pink;
+    }
+    p {
+        font-size: 12px;
+        color: blue;
+        a {
+            color: red;
+            display: block;
+            text-decoration: none;
+            width: 50px;
+            height: 20px;
+            &:hover {
+                border-bottom: 1px solid #000;
+            }
+        }
+    }
+}
+
+//3.混合    //混合可以将一个定义好的class A轻松的引入到另一个class B中，从而简单实现class B继承class A中的所有属性。我们还可以带参数地调用，就像使用函数一样
+//  不带参数混合
+.btn(){
+    color: red;
+    background: blue;
+    transform: scale(1.2);
+}
+.hearder2{
+    background: pink;
+    width: 100px;
+    height: 100px;
+    transition: 0.3s transform ease;
+    &:hover{
+        .btn();
+    }
+}
+//带参数混合
+.btn1(@a;@b;@c){
+    background: @a;
+    transform: @b;
+    color: @c;
+}
+
+.hearder3{
+    width: 200px;
+    height: 200px;
+    background: blue;
+    transition: 0.3s transform ease;
+    &:hover{
+        .btn1(pink;scale(1.2) rotateZ(360deg);red)
+    }
+}
+//4.计算 //计算    任何数字、颜色或者变量都可以参与运算。
+@w:200px;
+@h:200px;
+@base-color: red;
+.header4 {
+    width: 100px;
+    height: 100px;
+    background: #3ff;
+     &:hover{
+         width: @w*1.5;
+         height: @h*1.5;
+         background: @base-color + blue;
+     }
+}
+.aaa(@width;@height){
+    width: @width/20/2;
+    height: @height/20/2;
+}
+.heardera{
+   .aaa(640rem;320rem);
+   background: red;
+}
+.wh(@m)when(@m<=50){
+  width: 20px;
+}
+.wh(@m)when(@m>50){
+  width: 100px;
+}
+.headerb{
+    .wh(200);
+    height: 200px;
+    background: yellowgreen;
+}
+
+//引用
+//@import url("var.less");
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
