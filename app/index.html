@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles/create.css" />
     <link rel="stylesheet" href="styles/login.css" />
     <link rel="stylesheet" href="styles/surveyPage.css" />
+    <link rel="stylesheet" href="styles/base.css" />
     <!-- endbuild -->
   </head>
   <body ng-app="surveyTimeApp">
@@ -24,41 +25,46 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">surveyTime</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-    <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+    <div class="log_box">
+    	<div class="log_log">
+    		<div class="log_logpic">
+    			<img src="images/headerpic.gif" alt="" />
+    		</div>
+    		<h1><span>F</span><span>L</span><span>A</span><span>T</span><span>T</span><span>E</span></h1>
+    		<p><span>S</span><span>O</span><span>C</span><span>I</span><span>A</span><span class="log_mr">L</span><span>A</span><span>P</span><span>P</span></p>
+    	</div>
+    	<div class="log_uspa">
+    		<div class="log_user">
+    			<div class="glyphicon glyphicon-user log_user_logo"></div>
+    			<input type="text" placeholder="UserName"/>
+    		</div>
+    		<div class="log_user">
+    			<div class="glyphicon glyphicon-exclamation-sign log_user_logo"></div>
+    			<input type="text" placeholder="PassWord"/>
+    		</div>
+    		<div class="log_code" onload="createCode()">
+    			<form id="form1" runat="server" onsubmit="validateCode()">
+				    <div>
+					    <table border="0" cellspacing="5" cellpadding="5" >
+					        <tr>
+					            <td></td><td> <div class="code" id="checkCode" onclick="createCode()" ></div></td>
+					            <td><a  href="#" onclick="createCode()">看不清换一张</a></td>
+					        </tr>
+					        <tr>
+					            <td>验证码：</td><td><input  style="float:left;" type="text"   id="inputCode" /></td><td>请输入验证码</td>
+					        </tr>
+					        <tr><td></td><td><input id="Button1"  onclick="validateCode();" type="button" value="确定" /></td><td></td>
+					        </tr>
+					    </table>
+				    </div>
+				   </form>
+    		</div>
+    		<div class="log_submit">
+    			<a href="#" class="log_submit_log">LOGIN</a>
+    			<p>FORGOT PASSWORD</p>
+    			<a href="#" class="log_submit_regist">REGISTER</a>
+    		</div>
+    	</div>
     </div>
 
 
@@ -85,7 +91,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script type="text/javascript" src=""></script>	
+        <script src="scripts/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>
