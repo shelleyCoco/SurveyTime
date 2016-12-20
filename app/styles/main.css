@@ -83,6 +83,7 @@
 	width: 100%;
 	height: auto;
 	text-align: center;
+	margin-top: 1rem;
 }
 .log_submit_log{
 	display: block;
@@ -100,6 +101,7 @@
 	line-height: 2.25rem;
 	font-size: 0.4rem;
 	color: #fcfcfc;
+	margin-bottom: 0;
 }
 .log_submit_regist{
 	display: block;
@@ -112,13 +114,63 @@
 	border-radius: 0.25rem;
 }
 .log_code{
-	height: 200px;
+	height: auto;
 }
-
+.log_code p{
+	float: left;
+}
+.log_code_top{
+	text-align: left;
+	height: 1.8rem;
+	width: 7.25rem;
+}
+.log_code_top span{
+	float: left;
+	height: 0.45rem;
+	font-size: 0.45rem;
+	color: #ccc;
+	margin-top: 0.3rem;
+}
+.log_code_top input{
+	height: 1.25rem;
+	width: 4.5rem;
+	float: left;
+	font-size: 0.45rem;
+	color: #ccc;
+	border: none;
+	background: transparent;
+	border-bottom: 1px solid #8f9499;
+}
+.log_code_top p{
+	font-size: 0.3rem;
+	margin-bottom: 0;
+	text-align: center;
+	width: 100%;
+	margin-top: 0.2rem;
+	color: #ccc;
+}
+.log_code_pic{
+	text-align: left;
+	height: 1rem;
+	width: 7.25rem;
+	position: relative;
+	margin-top: 0.5rem;
+	margin-left: 2rem;
+}
+.log_code_pic a{
+	display: block;
+	float: left;
+	position: absolute;
+	bottom: .2rem;
+	left: 3rem;
+	font-size: 0.3rem;
+	color: #ccc;
+}
 .code{
 	font-family:Arial;
 	font-style:italic;
-	 color:blue;
+	 color:#ffee58;
+	 /*background: #edf8fe;*/
 	 font-size:30px;
 	 border:0;
 	 padding:2px 3px;
@@ -132,12 +184,4 @@
 	 text-align:center;
 	 vertical-align:middle;
 
-}
-a{
-	text-decoration:none;
-	font-size:12px;
-	color:#288bc4;
-}
-a:hover{
-  text-decoration:underline;
 }

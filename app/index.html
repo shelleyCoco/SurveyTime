@@ -44,23 +44,20 @@
     		</div>
     		<div class="log_code" onload="createCode()">
     			<form id="form1" runat="server" onsubmit="validateCode()">
-				    <div>
-					    <table border="0" cellspacing="5" cellpadding="5" >
-					        <tr>
-					            <td></td><td> <div class="code" id="checkCode" onclick="createCode()" ></div></td>
-					            <td><a  href="#" onclick="createCode()">看不清换一张</a></td>
-					        </tr>
-					        <tr>
-					            <td>验证码：</td><td><input  style="float:left;" type="text"   id="inputCode" /></td><td>请输入验证码</td>
-					        </tr>
-					        <tr><td></td><td><input id="Button1"  onclick="validateCode();" type="button" value="确定" /></td><td></td>
-					        </tr>
-					    </table>
-				    </div>
+				    	<div class="log_code_top">
+				    		<span>验证码：</span>
+				    		<input type="text" id="inputCode" />
+				    		<p>请输入验证码</p>
+				    	</div>
+				    	<div class="log_code_pic">
+				    		<div class="code" id="checkCode" onclick="createCode()" ></div>
+		            <a  href="javascript:;" onclick="createCode()">看不清换一张</a>
+				        <input id="Button1"  onclick="validateCode();" type="button" value="确定" />
+				    	</div>
 				   </form>
     		</div>
     		<div class="log_submit">
-    			<a href="#" class="log_submit_log">LOGIN</a>
+    			<a href="javascript:;" class="log_submit_log">LOGIN</a>
     			<p>FORGOT PASSWORD</p>
     			<a href="#" class="log_submit_regist">REGISTER</a>
     		</div>
