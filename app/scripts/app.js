@@ -18,13 +18,18 @@ window.onload = function(){
 angular
   .module('surveyTimeApp', ['ui.router']).controller('ctrl',['$scope',function($scope){
 	  
-	}]).config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+	}])
+  .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 		$stateProvider.state('cds',{
 			url:'/cds',
 			controller:'cdsController',
 			templateUrl:'views/main.html'
+		}).state('register',{
+			url:'/register',
+			controller:'register',
+			templateUrl:'views/register.html'
 		});
-		$urlRouterProvider.otherwise('/cds')
+		$urlRouterProvider.otherwise('/register')
 	}]).controller('cdsController',['$scope',function($scope){
 		
 	}]);
