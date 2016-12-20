@@ -20,7 +20,8 @@ angular
   .constant('url','http://47.90.20.200:1602/users')
   .controller('ctrl',['$scope',function($scope){
 	  
-	}]).config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+	}])
+  .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 		$stateProvider.state('cds',{
 			url:'/cds',
 			controller:'cdsController',
@@ -29,8 +30,37 @@ angular
 			url:'/login',
 			controller:'login',
 			templateUrl:'views/login.html'
+		}).state('register',{
+			url:'/register',
+			controller:'register',
+			templateUrl:'views/register.html'
 		});
-		$urlRouterProvider.otherwise('/login')
+		$urlRouterProvider.otherwise('/register')
 	}]).controller('cdsController',['$scope',function($scope){
 		
+	}]).service('data',["$http",function($http){
+		return{
+			get:function(url,cbk){
+				$http({
+					url:url,
+					method:"get",
+//					params:{"$skip":0,"$limit":10}
+				}).then(function(e){
+					cbk(e)
+				},function(){
+	
+				})
+			},
+			post:function(url,data,cbk){
+				$http({
+					url:url,
+					method:"post",
+					data:data
+				}).then(function(e){
+					cbk(e)
+				},function(){
+					
+				})
+			}
+		}
 	}])
