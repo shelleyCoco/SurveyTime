@@ -35,7 +35,7 @@ angular
 			controller:'register',
 			templateUrl:'views/register.html'
 		});
-		$urlRouterProvider.otherwise('/register')
+		$urlRouterProvider.otherwise('/login')
 	}]).controller('cdsController',['$scope',function($scope){
 		
 	}]).service('data',["$http",function($http){
