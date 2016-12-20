@@ -1,0 +1,38 @@
+<div class="log_box">
+	<div class="log_log">
+		<div class="log_logpic">
+			<img src="images/headerpic.gif" alt="" />
+		</div>
+		<h1>SURVEY TIME</h1>
+		<p>SOCIAL APP</p>
+	</div>
+	<div class="log_uspa">
+		<div class="log_user">
+			<div class="glyphicon glyphicon-user log_user_logo"></div>
+			<input id="" ng-model="loginuser" type="text" placeholder="UserName"/>
+		</div>
+		<div class="log_user">
+			<div class="glyphicon glyphicon-exclamation-sign log_user_logo"></div>
+			<input id="" ng-model="loginpass" type="text" placeholder="PassWord"/>
+		</div>
+		<div class="log_code" onload="createCode()">
+			<form id="form1" runat="server" onsubmit="validateCode()">
+			    	<div class="log_code_top">
+			    		<span>验证码：</span>
+			    		<input type="text" id="inputCode" ng-model="loginpic"/>
+			    		<p>请输入验证码</p>
+			    	</div>
+			    	<div class="log_code_pic">
+			    		<div class="code" id="checkCode" onclick="createCode()" ></div>
+	           			<a  href="javascript:;" onclick="createCode()">看不清换一张</a>
+			       		<!--<input id="Button1"  onclick="validateCode();" type="button" value="确定" />-->
+			    	</div>
+			   </form>
+		</div>
+		<div class="log_submit">
+			<a href="javascript:;" class="log_submit_log" ng-click="log()">LOGIN</a>
+			<p>FORGOT PASSWORD</p>
+			<a href="/register" class="log_submit_regist">REGISTER</a>
+		</div>
+	</div>
+</div>

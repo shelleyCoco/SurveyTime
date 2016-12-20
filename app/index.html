@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -12,9 +13,9 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/create.css" />
     <link rel="stylesheet" href="styles/login.css" />
+    <link rel="stylesheet" href="styles/cds.css" />
     <link rel="stylesheet" href="styles/surveyPage.css" />
     <link rel="stylesheet" href="styles/base.css" />
     <!-- endbuild -->
@@ -25,43 +26,8 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="log_box">
-    	<div class="log_log">
-    		<div class="log_logpic">
-    			<img src="images/headerpic.gif" alt="" />
-    		</div>
-    		<h1><span>F</span><span>L</span><span>A</span><span>T</span><span>T</span><span>E</span></h1>
-    		<p><span>S</span><span>O</span><span>C</span><span>I</span><span>A</span><span class="log_mr">L</span><span>A</span><span>P</span><span>P</span></p>
-    	</div>
-    	<div class="log_uspa">
-    		<div class="log_user">
-    			<div class="glyphicon glyphicon-user log_user_logo"></div>
-    			<input type="text" placeholder="UserName"/>
-    		</div>
-    		<div class="log_user">
-    			<div class="glyphicon glyphicon-exclamation-sign log_user_logo"></div>
-    			<input type="text" placeholder="PassWord"/>
-    		</div>
-    		<div class="log_code" onload="createCode()">
-    			<form id="form1" runat="server" onsubmit="validateCode()">
-				    	<div class="log_code_top">
-				    		<span>验证码：</span>
-				    		<input type="text" id="inputCode" />
-				    		<p>请输入验证码</p>
-				    	</div>
-				    	<div class="log_code_pic">
-				    		<div class="code" id="checkCode" onclick="createCode()" ></div>
-		            <a  href="javascript:;" onclick="createCode()">看不清换一张</a>
-				        <input id="Button1"  onclick="validateCode();" type="button" value="确定" />
-				    	</div>
-				   </form>
-    		</div>
-    		<div class="log_submit">
-    			<a href="javascript:;" class="log_submit_log">LOGIN</a>
-    			<p>FORGOT PASSWORD</p>
-    			<a href="#" class="log_submit_regist">REGISTER</a>
-    		</div>
-    	</div>
+    <div ng-controller="ctrl">
+    <ui-view></ui-view>
     </div>
 
 
@@ -88,7 +54,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/login.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>
