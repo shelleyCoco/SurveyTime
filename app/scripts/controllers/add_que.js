@@ -1,6 +1,6 @@
-	angular.module("surveyTimeApp",[])
+	angular.module("surveyTimeApp")
 	.constant("serve","http://47.90.20.200:1602")
-	.controller("add_que",function($scope,$http){
+	.controller("create",function($scope,$http){
 		$scope.updata={};
 		$scope.updata.option=[];
 //		$scope.updata.option=[{"title":"你每天学习几个小时？","opt":[],"type":2,"oop":"我每天学习8小时"}];
