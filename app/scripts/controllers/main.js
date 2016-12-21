@@ -99,9 +99,12 @@ angular.module('surveyTimeApp')
   		method:'get',
   		params:{'uid':'111'}
     }).then(function(e){
-console.log($scope.json)
+console.log(e)
     },function(e){});
     $scope.cdstc=function(){
     	$state.go('login')
+    }
+    $scope.cdsxinzeng=function(){
+    	$state.go('create')
     }
   }]);
