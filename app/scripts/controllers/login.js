@@ -4,9 +4,11 @@ window.onload = function(){
 	window.onresize = function(){
 		document.documentElement.style.fontSize  = innerWidth/16 + 'px';
 	}
-	createCode() //默认执行随机验证码
+	//默认执行随机验证码
+	var t = setTimeout(function(){
+		createCode()
+	},30)
 }
-        	
 	var code;
 function createCode() {
     code = "";
@@ -36,14 +38,11 @@ function validateCode(){
     else if (inputCode.toUpperCase() != code.toUpperCase()) 
     {
         alert("验证码输入有误！");
-//      console.log(inputCode)
-//      inputCode = '1111'   有疑问
         createCode();
         return false;
     }
     else 
     {
-//      alert("验证码正确！");
         return true;
     }       
 }   
@@ -61,18 +60,18 @@ angular
 				alert('请填写密码')
 			}else if(validateCode()){
 				$http({
-					url:url+"/login",
+					url:url+"users/login",
 					method:"post",
 					data:{username:$scope.loginuser,password:$scope.loginpass},
 					dataType:'json',
 				}).then(function(e){
 					console.log(e)
-//					validateCode()
 					if(status = '200'){
 						$scope.loginuser = '';
 						$scope.loginpass = '';
 						$scope.loginpic = '';
 					}
+					localStorage.uid = e.data.uid
 					$state.go('cds')
 				},function(e){
 					validateCode()

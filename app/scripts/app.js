@@ -17,7 +17,7 @@ window.onload = function(){
 
 angular
   .module('surveyTimeApp', ['ui.router'])
-  .constant('url','http://47.90.20.200:1602/users')
+  .constant('url','http://47.90.20.200:1602/')
   .controller('ctrl',['$scope',function($scope){
 	  
 	}])
