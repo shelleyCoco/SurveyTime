@@ -9,4 +9,5 @@
  * Main module of the application.
  */
 angular
-  .module('surveyTimeApp', []);
+  .module('surveyTimeApp', [])
+
