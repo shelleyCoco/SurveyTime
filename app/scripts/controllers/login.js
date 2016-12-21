@@ -49,7 +49,7 @@ function validateCode(){
 
 angular
   .module('surveyTimeApp')
-.controller('login',['$scope','$http','url',function($scope,$http,url){
+.controller('login',['$scope','$http','url','$state',function($scope,$http,url,$state){
 		$scope.loginuser = '';
 		$scope.loginpass = '';
 		$scope.loginpic = '';
@@ -66,13 +66,13 @@ angular
 					dataType:'json',
 				}).then(function(e){
 					console.log(e)
-					validateCode()
+//					validateCode()
 					if(status = '200'){
-						
 						$scope.loginuser = '';
 						$scope.loginpass = '';
 						$scope.loginpic = '';
 					}
+					$state.go('cds')
 				},function(e){
 					validateCode()
 					alert('用户名或密码不正确')
@@ -80,9 +80,6 @@ angular
 					$scope.loginpic = '';
 				}) 	
 			}
-			
 		}
-		
-		
 	}])
  

@@ -34,9 +34,17 @@ angular
 			url:'/register',
 			controller:'register',
 			templateUrl:'views/register.html'
+		}).state('create',{
+			url:'/create',
+			controller:'create',
+			templateUrl:'views/create.html'
+		}).state('error',{
+			url:'/error',
+			controller:'error',
+			templateUrl:'404.html'
 		});
-		$urlRouterProvider.otherwise('/login')
-	}]).controller('cdsController',['$scope',function($scope){
+		$urlRouterProvider.when('','login').otherwise('error')
+	}]).controller('cdsController',['$scope','$state',function($scope,$state){
 		
 	}]).service('data',["$http",function($http){
 		return{
