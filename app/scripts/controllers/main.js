@@ -9,7 +9,7 @@
  */
 angular.module('surveyTimeApp')
   .controller('cdsController', ['$scope','$http',function ($scope,$http) {
-  	var url='http://47.90.20.200:1602';
+  	
   	$scope.json=[{
   		"option":[
 	  		{
@@ -93,11 +93,11 @@ angular.module('surveyTimeApp')
   		"title":"你热爱学习吗",
   		"id":"6c4087e8acf439b7"
   	}]
-
+  	var url='http://47.90.20.200:1602';
     $http({
     	url:url+'/item/',
   		method:'get',
-  		params:{'uid':'1'}
+  		params:{'uid':'111'}
     }).then(function(e){
 console.log($scope.json)
     },function(e){})
