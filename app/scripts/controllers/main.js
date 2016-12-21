@@ -8,7 +8,7 @@
  * Controller of the surveyTimeApp
  */
 angular.module('surveyTimeApp')
-  .controller('cdsController', ['$scope','$http',function ($scope,$http) {
+  .controller('cdsController', ['$scope','$http','$state',function ($scope,$http,$state) {
   	
   	$scope.json=[{
   		"option":[
@@ -100,5 +100,8 @@ angular.module('surveyTimeApp')
   		params:{'uid':'111'}
     }).then(function(e){
 console.log($scope.json)
-    },function(e){})
+    },function(e){});
+    $scope.cdstc=function(){
+    	$state.go('login')
+    }
   }]);
