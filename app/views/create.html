@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
-</html>
+<div class="container" ng-controller="create">
+    	<div class="form-group">
+    		<label for="exampleInputEmail1" class="ng-binding">问卷标题</label>
+    		<input ng-model="updata.title" type="text" class="form-control ng-pristine ng-valid ng-empty ng-valid-email ng-touched" id="exampleInputEmail1" placeholder="请输入你的问卷标题">
+    	</div>
+    	<div ng-repeat='updata_que in updata.option'>
+    		<addque index="{{$index}}"></addque>
+    	</div>
+    		<div style="color:#999" class="btn btn-default glyphicon glyphicon-plus" ng-click="add()"></div>
+    		<div style="margin-top: 10px;">
+    		<button type="button" class="btn btn-success" ng-click="sub()">Submit</button>
+    		</div>
+    </div>
