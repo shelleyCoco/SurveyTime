@@ -30,19 +30,19 @@ module.exports = function (grunt) {
 
     // Project settings
     yeoman: appConfig,
-		less: {
-      		  compile: {
-         		   files: {
-         		       'app/styles/login.css': 'app/styles/login.less'
-        		    }
-      		  }
-   		},
+		// less: {
+  //     		  compile: {
+  //        		   files: {
+  //        		       'app/styles/login.css': 'app/styles/login.less'
+  //       		    }
+  //     		  }
+  //  		},
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-    	 scripts: {
-          		  files: ['app/styles/login.less'],
-           		 tasks: ['less']
-    		   },
+    	 // scripts: {
+      //     		  files: ['app/styles/login.less'],
+      //      		 tasks: ['less']
+    		//    },
       bower: {
         files: ['bower.json'],
         tasks: ['wiredep']
@@ -448,7 +448,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'postcss:server',
       'connect:livereload',
-      'less',
+      // 'less',
       'watch'
     ]);
   });

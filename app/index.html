@@ -13,8 +13,6 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/base.css" />
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/create.css" />
     <link rel="stylesheet" href="styles/login.css" />
     <link rel="stylesheet" href="styles/cds.css" />
@@ -28,7 +26,6 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-
     <div ng-controller="ctrl">
     <ui-view></ui-view>
     </div>
@@ -57,7 +54,8 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/login.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/register.js"></script>
         <!-- endbuild -->
 </body>
 </html>
