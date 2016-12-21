@@ -1,0 +1,31 @@
+<div ng-controller="register" class="reg_box">
+	<div class="reg_log">
+		<div class="reg_logpic">
+			<img src="images/headerpic.gif" alt="" />
+		</div>
+		<h1>SURVEY TIME</h1>
+		<p>SOCIAL APP</p>
+	</div>
+	<div class="reg_uspa">
+		<div class="reg_user">
+			<div class="glyphicon glyphicon-user reg_user_logo"></div>
+			<input type="text" placeholder="UserName" ng-model="username" />
+		</div>
+		<div class="reg_user">
+			<div class="glyphicon glyphicon-exclamation-sign reg_user_logo"></div>
+			<input type="password" placeholder="PassWord"  ng-model="pw" />
+		</div>
+		<div class="reg_user">
+			<div class="glyphicon glyphicon-exclamation-sign reg_user_logo"></div>
+			<input type="password" placeholder="PassWord" ng-model="pw1" />
+		</div>
+		<div class="reg_submit">
+			<a href="javascript:;" class="reg_submit_log" ng-click='clickLoginBtn()'>CONFIRM</a>
+
+		</div>
+		<div class="reg_submit">
+			<a  class="reg_submit_regist" ui-sref="login">LOGIN</a>
+		</div>
+	</div>
+</div>
+</div>
