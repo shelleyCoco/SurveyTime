@@ -45,7 +45,7 @@ angular
 		});
 		$urlRouterProvider.when('','login').otherwise('error')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
-		
+
 	}]).service('data',["$http",function($http){
 		return{
 			get:function(url,cbk){
