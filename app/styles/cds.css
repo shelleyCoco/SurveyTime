@@ -1,9 +1,81 @@
 
+body{background:#f5f5f5;padding-top:0.4rem;position:relative;height:100%;}
+.cdsdada{width:100%;height:3.2rem;border-bottom:0.025rem solid #ccc;line-height:3.2rem;position:absolute;top:0;background:#fff;z-index:2;}
+.cdsdada i{float:left;font-size:1.5rem;margin-left:2rem;}
+.cdsdada span{float:right;padding:0 0.825rem;}
+.cdsss{width:100%;height:auto;}
 
-h1{font-size:12px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif}
-.cdsdada{width:100%;height:2.45rem;background:#d1462f;border-bottom:0.05rem solid #CCC;text-align:center;font-size:0.35rem;}
-.cdsdada span{width:2.4rem;height:2.4rem;float:right;background:url(../images/cds-caidan.png) no-repeat;background-size:cover;}
-.navbar-brand {font-size:0.8rem;color:#FFF;font-weight:bold;float:left;margin-left:5rem;}
-.cdscolor:active{background:#ccc;}
+.cdsContent{width:100%;margin-top:0.5rem;}
+.cdsContent li{padding:0.75rem;position:relative;margin-bottom:0.3rem;background: #fff}
+.cdsss .mei{margin:0;}
+
+
+.cdsContent p i{font-size:0.8rem;font-weight:bold;}
+.cdsContent .cdsspan{display:block;float:right;}
+.cdsfenxiang{width:100%;border-top:0.025rem solid #ccc;}
+.cdsfenxiang span{margin: 0.5rem 0.5rem 0 0.5rem;float:left;}
+
+.cdsposition{width:100%;height:2.5rem;background:#fff;position:fixed;bottom: 0;left:0;}
+.cdsbottom{width:100%;height: 100%;}
+.cdsbottom div{}
+.cdsbottomle{font-size:1.4rem;color:#000;margin-left:2rem;margin-top:0.5rem;}
+.cdsbottomri{font-size:1.4rem;color:#eb6371;margin-left:3.5rem;margin-top:0.5rem;}
+.cdsbottomco {font-size:1.6rem;color:#eb6371;margin-left:3.5rem;margin-top:0.4rem;}
+
+.cdsfenxiang span{width:1rem;height:1rem;float:left;}
+.cdsqq{width:1rem;height:1rem;background:url(../images/cdsqq.png);background-size: cover;}
+.cdsvx{background:url(../images/cdsvx.png);background-size: cover;}
+
+.cdsnone{width:2rem;height:2rem;position:absolute;right: 0;top:0.75rem;background:#fff;display:none;}
+
+
+
+.checkboxFour {
+	width: 1rem;
+	height: 1rem;
+	background: #ddd;
+	border-radius: 100%;
+	position: relative;
+	top:1rem;
+	left:0.5rem;
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+.checkboxFour label {
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 5rem;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 0rem;
+	left:  0rem;
+	z-index: 1;
+	background: #333;
+	-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+#checkboxFourInput{
+	visibility: hidden;
+}
+.checkboxFour input[type=checkbox]:checked + label {
+	background: #26ca28;
+}
+
+
+
+
+
+
+
+
+
 
 
