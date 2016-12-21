@@ -4,7 +4,8 @@ angular
 		$scope.loginuser = '';
 		$scope.loginpass = '';
 		$scope.loginpic = '';
-		$scope.log = function(){
+		$scope.log= function(){
+			console.log(1)
 			$http({
 				url:url+"/login",
 				method:"post",
