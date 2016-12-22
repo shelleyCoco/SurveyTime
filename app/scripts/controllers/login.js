@@ -73,6 +73,7 @@ angular
 						$scope.loginpass = '';
 						$scope.loginpic = '';
 					}
+					localStorage.uid = e.data.uid
 					$state.go('cds')
 				},function(e){
 					validateCode()
