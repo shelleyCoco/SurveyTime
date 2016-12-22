@@ -40,10 +40,9 @@ angular
 			templateUrl:'views/create.html'
 		}).state('error',{
 			url:'/error',
-			controller:'error',
 			templateUrl:'404.html'
 		});
-		$urlRouterProvider.when('','login').otherwise('error')
+		$urlRouterProvider.when('','/login').otherwise('login')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
 
 	}]).service('data',["$http",function($http){

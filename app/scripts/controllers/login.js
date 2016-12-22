@@ -1,13 +1,4 @@
-window.onload = function() {
-	document.documentElement.style.fontSize = innerWidth / 16 + 'px';
-	window.onresize = function() {
-			document.documentElement.style.fontSize = innerWidth / 16 + 'px';
-		}
-		//默认执行随机验证码
-	
-}
 var code;
-
 angular
 	.module('surveyTimeApp')
 	.controller('login', ['$scope', '$http', 'url', '$state', '$timeout',function($scope, $http, url, $state,timeout) {
