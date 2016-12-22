@@ -29,7 +29,7 @@ angular
 		}).state('login',{
 			url:'/login',
 			controller:'login',
-			templateUrl:'views/login.html'
+			templateUrl:'views/cd.html'
 		}).state('register',{
 			url:'/register',
 			controller:'register',
@@ -42,6 +42,10 @@ angular
 			url:'/error',
 			controller:'error',
 			templateUrl:'404.html'
+		}).state('graph',{
+			url:'/graph',
+			controller:'graph',
+			templateUrl:'views/graph.html'
 		});
 		$urlRouterProvider.when('','login').otherwise('error')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
