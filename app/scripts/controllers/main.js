@@ -8,9 +8,9 @@
  * Controller of the surveyTimeApp
  */
 angular.module('surveyTimeApp')
-  .controller('cdsController', ['$scope','$http',function ($scope,$http) {
-  	var url='http://47.90.20.200:1602';
-  	$scope.json=[{
+  .controller('cdsController', ['$scope','$http','$state',function ($scope,$http,$state){
+  	
+  	$scope.json2=[{
   		"option":[
 	  		{
 	  			"title":"你每天学习几个小时？",
@@ -93,12 +93,35 @@ angular.module('surveyTimeApp')
   		"title":"你热爱学习吗",
   		"id":"6c4087e8acf439b7"
   	}]
-
+  	$scope.json=[];
+  	var url='http://47.90.20.200:1602';
     $http({
     	url:url+'/item/',
   		method:'get',
-  		params:{'uid':'1'}
+  		params:{'uid':localStorage.uid}
     }).then(function(e){
-console.log($scope.json)
-    },function(e){})
+		console.log(e)
+		$scope.json=e.data
+    },function(e){
+    	
+    });
+    $scope.cdstc=function(){
+    	
+    	$state.go('login')
+    }
+    $scope.cdsxinzeng=function(){
+    	$state.go('create')
+    }
+    $scope.delete=function(index){
+    	console.log($scope.json[index].id)
+    	var id=$scope.json[index].id
+    	$http({
+    		url:url+'/item/'+id,
+    		method:'delete',
+
+    	}).then(function(e){
+    		console.log(e)
+    		$scope.json.splice(index,1)
+    	},function(){})
+    }
   }]);

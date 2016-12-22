@@ -1,3 +1,4 @@
+
 window.onload = function(){
 	document.documentElement.style.fontSize  = innerWidth/16 + 'px';
 	window.onresize = function(){
@@ -49,7 +50,7 @@ function validateCode(){
 
 angular
   .module('surveyTimeApp')
-.controller('login',['$scope','$http','url',function($scope,$http,url){
+.controller('login',['$scope','$http','url','$state',function($scope,$http,url,$state){
 		$scope.loginuser = '';
 		$scope.loginpass = '';
 		$scope.loginpic = '';
@@ -66,23 +67,23 @@ angular
 					dataType:'json',
 				}).then(function(e){
 					console.log(e)
-					validateCode()
 					if(status = '200'){
-						
 						$scope.loginuser = '';
 						$scope.loginpass = '';
 						$scope.loginpic = '';
 					}
+					localStorage.uid = e.data.uid
+
+					localStorage.id = e.data.id
+					$state.go('cds')
 				},function(e){
 					validateCode()
 					alert('用户名或密码不正确')
 					$scope.loginpass = '';
 					$scope.loginpic = '';
 				}) 	
+
 			}
-			
 		}
-		
-		
 	}])
  
