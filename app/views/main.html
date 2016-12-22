@@ -8,7 +8,7 @@
 <div class="bodyf">
 	<div class="cdsdada">
      <i>SurveyTime</i>
-     <span>退出</span>
+     <span ng-click="cdstc()">退出</span>
     </div>
     <div class="cdsss">
         <form class="navbar-form navbar-left ng-pristine ng-valid mei" role="search"> <div class="form-group"> <input type="text" class="form-control" placeholder="Search"> </div> </form>
@@ -26,11 +26,9 @@
             </div>
             <div class="cdsnone"> 
                 <div class="checkboxFour">
-        <input type="checkbox" value="1" id="checkboxFourInput{{$index}}" name="" />
-        <label for="checkboxFourInput{{$index}}"></label>
-    </div>
-
-        <label 
+                    <input type="checkbox" value="1" id="checkboxFourInput{{$index}}" name="" />
+                    <label for="checkboxFourInput{{$index}}"></label>
+                </div>
             </div>
         </li>
     </ul>
@@ -39,7 +37,7 @@
             <div class="cdsbottomle fl glyphicon glyphicon-list">
                 
             </div>
-            <div class="cdsbottomco fl glyphicon glyphicon-plus-sign">
+            <div class="cdsbottomco fl glyphicon glyphicon-plus-sign" ng-click="cdsxinzeng()">
                 
             </div>
             <div class="cdsbottomri fl glyphicon glyphicon-edit">
