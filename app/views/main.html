@@ -17,12 +17,12 @@
         <li ng-repeat="x in json">
             <p>
                 <i>{{x.title}}</i>
-                <span class="cdsspan glyphicon glyphicon-remove"></span>
+                <span class="cdsspan glyphicon glyphicon-remove" ng-click="delete($index)"></span>
             </p>
             <div class="cdsfenxiang clearFix">
                 <span class="cdsqq"></span>
                 <span class="cdsvx"></span>
-                <span class="cdsfz">FZ</span>
+                <span class="cdsfz">copy</span>
             </div>
             <div class="cdsnone"> 
                 <div class="checkboxFour">
@@ -34,9 +34,7 @@
     </ul>
     <Div class="cdsposition">
         <div class="cdsbottom clearFix">
-            <div class="cdsbottomle fl glyphicon glyphicon-list">
-                
-            </div>
+            
             <div class="cdsbottomco fl glyphicon glyphicon-plus-sign" ng-click="cdsxinzeng()">
                 
             </div>
@@ -45,4 +43,5 @@
             </div>
         </div>
     </Div>
+
 </div>
