@@ -1,9 +1,9 @@
-	window.onload = function(){
-	document.documentElement.style.fontSize  = innerWidth/16 + 'px';
-	window.onresize = function(){
-		document.documentElement.style.fontSize  = innerWidth/16 + 'px';
-	}
-}
+//	window.onload = function(){
+//	document.documentElement.style.fontSize  = innerWidth/16 + 'px';
+//	window.onresize = function(){
+//		document.documentElement.style.fontSize  = innerWidth/16 + 'px';
+//	}
+//}
 	angular.module("surveyTimeApp")
 	.constant("serve","http://47.90.20.200:1602")
 	.controller("create",['$scope','$http','serve',function($scope,$http,serve){
