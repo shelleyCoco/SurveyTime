@@ -1,43 +1,40 @@
 <div class="bodyf">
 	<div class="cdsdada">
-		<i>SurveyTime</i>
-		<span>退出</span>
-	</div>
-	<div class="cdsss">
-		<form class="navbar-form navbar-left ng-pristine ng-valid mei" role="search">
-			<div class="form-group"> <input type="text" class="form-control" placeholder="Search"> </div>
-		</form>
-	</div>
-	<ul class="cdsContent">
-		<li ng-repeat="x in json">
-			<p>
-				<i>{{x.title}}</i>
-				<span class="cdsspan glyphicon glyphicon-remove"></span>
-			</p>
-			<div class="cdsfenxiang clearFix">
-				<span class="cdsqq"></span>
-				<span class="cdsvx"></span>
-				<span class="cdsfz">FZ</span>
-			</div>
-			<div class="cdsnone">
-				<div class="checkboxFour">
-					<input type="checkbox" value="1" id="checkboxFourInput{{$index}}" name="" />
-					<label for="checkboxFourInput{{$index}}"></label>
-				</div>
-			</div>
-		</li>
-	</ul>
-	<Div class="cdsposition">
-		<div class="cdsbottom clearFix">
-			<div class="cdsbottomle fl glyphicon glyphicon-list">
+     <i>SurveyTime</i>
+     <span ng-click="cdstc()">退出</span>
+    </div>
+    <div class="cdsss">
+        <form class="navbar-form navbar-left ng-pristine ng-valid mei" role="search"> <div class="form-group"> <input type="text" class="form-control" placeholder="Search"> </div> </form>
+    </div>
+    <ul class="cdsContent">
+        <li ng-repeat="x in json">
+            <p>
+                <i>{{x.title}}</i>
+                <span class="cdsspan glyphicon glyphicon-remove" ng-click="delete($index)"></span>
+            </p>
+            <div class="cdsfenxiang clearFix">
+                <span class="cdsqq"></span>
+                <span class="cdsvx"></span>
+                <span class="cdsfz">copy</span>
+            </div>
+            <div class="cdsnone"> 
+                <div class="checkboxFour">
+                    <input type="checkbox" value="1" id="checkboxFourInput{{$index}}" name="" />
+                    <label for="checkboxFourInput{{$index}}"></label>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <Div class="cdsposition">
+        <div class="cdsbottom clearFix">
+            
+            <div class="cdsbottomco fl glyphicon glyphicon-plus-sign" ng-click="cdsxinzeng()">
+                
+            </div>
+            <div class="cdsbottomri fl glyphicon glyphicon-edit">
+                
+            </div>
+        </div>
+    </Div>
 
-			</div>
-			<div class="cdsbottomco fl glyphicon glyphicon-plus-sign">
-
-			</div>
-			<div class="cdsbottomri fl glyphicon glyphicon-edit">
-
-			</div>
-		</div>
-	</Div>
 </div>

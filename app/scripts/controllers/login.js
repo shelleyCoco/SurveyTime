@@ -67,12 +67,14 @@ angular
 					dataType:'json',
 				}).then(function(e){
 					console.log(e)
-//					validateCode()
 					if(status = '200'){
 						$scope.loginuser = '';
 						$scope.loginpass = '';
 						$scope.loginpic = '';
 					}
+					localStorage.uid = e.data.uid
+
+					localStorage.id = e.data.id
 					$state.go('cds')
 				},function(e){
 					validateCode()
@@ -80,6 +82,7 @@ angular
 					$scope.loginpass = '';
 					$scope.loginpic = '';
 				}) 	
+
 			}
 		}
 	}])
