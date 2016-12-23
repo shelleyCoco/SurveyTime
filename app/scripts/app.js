@@ -20,6 +20,8 @@ angular
   .constant('url','http://47.90.20.200:1602/')
   .controller('ctrl',['$scope',function($scope){
 	  
+		$scope.hintTitle = '';
+		$scope.hintB = false
 	}])
   .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 		$stateProvider.state('cds',{
@@ -71,3 +73,9 @@ angular
 			}
 		}
 	}])
+.directive('hint',function(){
+	return {
+		restrict:'CAME',
+		template:'<div ng-show="hintB" class="hintBox">{{hintTitle}}</div>'
+	}
+})
