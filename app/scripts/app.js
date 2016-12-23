@@ -29,7 +29,7 @@ angular
 		}).state('login',{
 			url:'/login',
 			controller:'login',
-			templateUrl:'views/cd.html'
+			templateUrl:'views/login.html'
 		}).state('register',{
 			url:'/register',
 			controller:'register',
