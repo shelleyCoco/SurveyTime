@@ -1,7 +1,7 @@
 	angular.module("surveyTimeApp")
 	.constant("serve","http://47.90.20.200:1602")
 	.controller("create",['$scope','$http','serve','$state',function($scope,$http,serve,$state){
-		$scope.updata={"uid":localStorage.uid,"title":"","id":localStorage.id,"option":[]};
+		$scope.updata={"uid":localStorage.uid,"title":"","id":"","option":[]};
 		$scope.updata.option=[];
 		$scope.add=function(){
 			$scope.updata.option.push({"title":"","type":0,"opt":[],"oop":""});
@@ -16,6 +16,7 @@
 			url:serve+"/item/",
 			data:$scope.updata,
 			}).then(function(e){
+				$state.go("cds");
 					console.log($scope.updata)
 			},function(){})
 		}
