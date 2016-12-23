@@ -17,7 +17,7 @@ window.onload = function(){
 
 angular
   .module('surveyTimeApp', ['ui.router'])
-  .constant('url','http://47.90.20.200:1602/users')
+  .constant('url','http://47.90.20.200:1602/')
   .controller('ctrl',['$scope',function($scope){
 	  
 	}])
@@ -40,12 +40,11 @@ angular
 			templateUrl:'views/create.html'
 		}).state('error',{
 			url:'/error',
-			controller:'error',
 			templateUrl:'404.html'
 		});
-		$urlRouterProvider.when('','login').otherwise('error')
+		$urlRouterProvider.when('','/login').otherwise('login')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
-
+		
 	}]).service('data',["$http",function($http){
 		return{
 			get:function(url,cbk){

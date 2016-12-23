@@ -9,23 +9,25 @@
 	<div class="reg_uspa">
 		<div class="reg_user">
 			<div class="glyphicon glyphicon-user reg_user_logo"></div>
-			<input type="text" placeholder="UserName" ng-model="username" />
+			<input type="text" placeholder="用户名在6-18位之间" ng-model="username" />
 		</div>
 		<div class="reg_user">
 			<div class="glyphicon glyphicon-exclamation-sign reg_user_logo"></div>
-			<input type="password" placeholder="PassWord"  ng-model="pw" />
+			<input type="password" placeholder="密码在6位以上"  ng-model="pw" />
 		</div>
 		<div class="reg_user">
 			<div class="glyphicon glyphicon-exclamation-sign reg_user_logo"></div>
 			<input type="password" placeholder="PassWord" ng-model="pw1" />
 		</div>
+		<div id="wjy_tishi"></div>
 		<div class="reg_submit">
 			<a href="javascript:;" class="reg_submit_log" ng-click='clickLoginBtn()'>CONFIRM</a>
 
-		</div>
-		<div class="reg_submit">
+		
+		
 			<a  class="reg_submit_regist" ui-sref="login">LOGIN</a>
 		</div>
 	</div>
 </div>
 </div>
+
