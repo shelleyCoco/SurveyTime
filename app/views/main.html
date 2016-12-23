@@ -24,9 +24,9 @@
                 <span class="cdsvx"></span>
                 <span class="cdsfz">copy</span>
             </div>
-            <div class="cdsnone"> 
+            <div class="cdsnone" ng-show="cdschulai"> 
                 <div class="checkboxFour">
-                    <input type="checkbox" value="1" id="checkboxFourInput{{$index}}" name="" />
+                    <input type="checkbox" value="1" id="checkboxFourInput{{$index}}" name="" ng-model="x.checked"/>
                     <label for="checkboxFourInput{{$index}}"></label>
                 </div>
             </div>
@@ -35,12 +35,9 @@
     <Div class="cdsposition">
         <div class="cdsbottom clearFix">
             
-            <div class="cdsbottomco fl glyphicon glyphicon-plus-sign" ng-click="cdsxinzeng()">
-                
-            </div>
-            <div class="cdsbottomri fl glyphicon glyphicon-edit">
-                
-            </div>
+            <div class="cdsbottomco fl glyphicon glyphicon-plus-sign" ng-click="cdsxinzeng()"></div>
+            <div class="cdsbottomri fl glyphicon glyphicon-edit" ng-show="isshow" ng-click="cdsAll()"></div>
+            <div class="cdsbottomri fl glyphicon glyphicon-trash" ng-click="cdsDel()" ng-show="!isshow"></div>
         </div>
     </Div>
 
