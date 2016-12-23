@@ -1,0 +1,13 @@
+<div class="log_code">
+	<form id="form1" runat="server" >
+		<div class="log_code_top">
+			<span>验证码：</span>
+			<input type="text" id="inputCode" ng-model="loginpic" />
+			<p>请输入验证码</p>
+		</div>
+		<div class="log_code_pic">
+			<div class="code" id="checkCode" ng-click="createCode()"></div>
+			<a href="javascript:;" ng-click="createCode()">看不清换一张</a>
+		</div>
+	</form>
+</div>
