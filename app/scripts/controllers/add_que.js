@@ -1,6 +1,6 @@
 	angular.module("surveyTimeApp")
 	.constant("serve","http://47.90.20.200:1602")
-	.controller("create",['$scope','$http','serve','$state',function($scope,$http,serve,$state){
+	.controller("create",['$scope','$http','serve','$state','$timeout',function($scope,$http,serve,$state,$timeout){
 		$scope.updata={"uid":localStorage.uid,"title":"","id":"","option":[]};
 		$scope.updata.option=[];
 		$scope.add=function(){
@@ -32,7 +32,11 @@
 						console.log($scope.updata)
 				},function(){})
 			}else{
-				alert("error")
+					$scope.hintTitle = '选择题至少有两个选项';
+					$scope.hintB = true;
+					$timeout(function(){
+						$scope.hintB = false;
+					},1000)
 			}
 		}
 		}])

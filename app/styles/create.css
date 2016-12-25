@@ -41,6 +41,19 @@ input.ng-invalid{
 .yky_bg div{
 	background: rgba(255,255,255,0);
 }
+.yky_bg .hintBox{
+	width: 10rem;
+	height: 3rem;
+	position: fixed;
+	top: 46%;
+	left: 50%;
+	margin-left: -5rem;
+	background: rgba(255,255,255,.8);
+	color: #222222;
+	text-align: center;
+	line-height: 3rem;
+	border-radius: .25rem;
+}
 .yky_bg input{
 	background: none;
 	color: #fff;
