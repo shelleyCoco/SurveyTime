@@ -5,37 +5,36 @@ angular.module('surveyTimeApp').controller('register', ['$scope', '$http', '$fil
 		$scope.pw = '';
 		$scope.pw1 = '';
         
-		function veri() {
+//		function veri() {
+//			
+//			}
+		$scope.clickLoginBtn = function() {
+			var b=true;
 			if((!yhm.test($scope.username))) {
-//				alert('用户名在6-18，请重新输入');
-              wjy_tishi.style.display='block';
-//				wjy_tishi.innerHTML='用户名在6-18，请重新输入'
+               $scope.hintTitle='用户名在6-18位，请重新输入';
+               $scope.hintB = true;
 				$timeout(function(){
-					wjy_tishi.style.display='none';
-				},2000)
-				return false;
+					$scope.hintB = false;
+				},1000)
+				b = false;
 				}else if(!(mm.test($scope.pw))) {
-//					alert('密码长度在6位以上，请重新输入');
-//              wjy_tishi.style.display='block';
-//				wjy_tishi.innerHTML='密码长度在6位以上，请重新输入'
+                    $scope.hintTitle='密码长度在6位以上，请重新输入';
+                    $scope.hintB = true;
 					$timeout(function(){
-					wjy_tishi.style.display='none';
-				},2000)
-					return false;
+					$scope.hintB = false;
+				},1000)
+				b = false;
 				}else if($scope.pw!=$scope.pw1) {
-//					alert('两次输入的密码不一样，请重新输入！');
-//              wjy_tishi.style.display='block';
-//				wjy_tishi.innerHTML='两次输入的密码不一样，请重新输入！'
+                    $scope.hintTitle='两次输入的密码不一样，请重新输入！';
+                    $scope.hintB = true;
 					$timeout(function(){
-					wjy_tishi.style.display='none';
-				},2000)
-					return false;
+					$scope.hintB = false;
+				},1000)
+				b = false;
 				}else{
-					return true;
+					b = true;
 					}
-			}
-		$scope.clickLoginBtn = function() { 
-			if(veri()) {
+			if(b) {
 				$http({
 					url: 'http://47.90.20.200:1602/users',
 					method: 'post',
@@ -44,17 +43,14 @@ angular.module('surveyTimeApp').controller('register', ['$scope', '$http', '$fil
 						'password': $scope.pw
 					}
 				}).then(function() {
-					//alert('注册成功！')
-//					wjy_tishi.style='block';
-//					wjy_tishi.innerHTML='注册成功！'
+					$scope.hintTitle='注册成功！'
 					$state.go('login')
 				}, function() {
-//					alert('用户名已经被注册，换个试试！')
-//                  wjy_tishi.style.display='block';
-//					wjy_tishi.innerHTML='用户名已有，请重新输入！'
+					$scope.hintTitle='用户名已有，请重新输入！';
+					 $scope.hintB = true;
                    $timeout(function(){
-					//wjy_tishi.style.display='none';
-				},2000)
+					$scope.hintB = false;
+				},1000)
 				})
 			}
 
