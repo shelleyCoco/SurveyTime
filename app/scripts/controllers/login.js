@@ -29,12 +29,19 @@ angular
 		$scope.validateCode = function(){
 			var inputCode = document.getElementById("inputCode").value;
 			if(inputCode.length <= 0) {
-				alert(1)
 				$scope.hintTitle = '请输入验证码';
+				$scope.hintB = true;
+				timeout(function(){
+					$scope.hintB = false;
+				},1000)
 				return false;
 			} else if(inputCode.toUpperCase() != code.toUpperCase()) {
 				$scope.hintTitle = '验证码输入有误';
 				$scope.createCode();
+				$scope.hintB = true;
+				timeout(function(){
+					$scope.hintB = false;
+				},1000)
 				return false;
 			} else {
 				return true;
@@ -66,6 +73,10 @@ angular
 					console.log(e)
 					if(status = '200'){
 						$scope.hintTitle = '登陆成功';
+						$scope.hintB = true
+						timeout(function(){
+							$scope.hintB = false;
+						},1000)
 						$scope.loginuser = '';
 						$scope.loginpass = '';
 						$scope.loginpic = '';
