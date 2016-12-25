@@ -13,16 +13,14 @@
 		</div>
 		<div class="log_user">
 			<div class="glyphicon glyphicon-exclamation-sign log_user_logo"></div>
-			<input id="" ng-model="loginpass" type="text" placeholder="PassWord"/>
+			<input id="" ng-model="loginpass" type="password" placeholder="PassWord"/>
 		</div>
 		<validate-code></validate-code>
 		<div class="log_submit">
-			<a href="javascript:;" class="log_submit_log" ng-click="log()">LOGIN</a>
+			<a href="javascript:;"  data-target=".bs-example-modal-sm"  class="log_submit_log" ng-click="log()">LOGIN</a>
 			<p>FORGOT PASSWORD</p>
-			<a ui-sref="register" class="log_submit_regist" ng-click="createCode()">REGISTER</a>
+			<a ui-sref="register"  class="log_submit_regist" ng-click="createCode()">REGISTER</a>
 		</div>
 	</div>
-	<!--<div class="log_bg">
-		
-	</div>-->
+	<hint></hint>
 </div>
