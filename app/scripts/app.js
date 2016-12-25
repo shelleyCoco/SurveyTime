@@ -16,7 +16,7 @@ window.onload = function(){
 }
 
 angular
-  .module('surveyTimeApp', ['ui.router'])
+  .module('surveyTimeApp', ['ui.router',"chart.js"])
   .constant('url','http://47.90.20.200:1602/')
   .controller('ctrl',['$scope',function($scope){
 	  
@@ -46,7 +46,7 @@ angular
 			controller:'graph',
 			templateUrl:'views/graph.html'
 		});
-		$urlRouterProvider.when('','/login').otherwise('login')
+		$urlRouterProvider.when('','/graph').otherwise('error')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
 		
 	}]).service('data',["$http",function($http){
