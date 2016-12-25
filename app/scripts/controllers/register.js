@@ -60,11 +60,4 @@ angular.module('surveyTimeApp').controller('register', ['$scope', '$http', '$fil
 
 		}
 	}])
-    .directive('alert',[function(){
-		return {
-			restrict:'EACM',
-			template:'<div><div class="wjy_tishi" id="{{alertid}}">{{alertinner}}</div></div>',
-			scope:{alertinner:'@abcd',alertid:'@abcid'}	
-		}
-	}])
 	
