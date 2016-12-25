@@ -26,6 +26,12 @@ dt {
   font-style: normal;
   box-sizing: border-box;
 }
+input.ng-valid{
+	border: 1px solid green;
+}
+input.ng-invalid{
+	border: 1px solid #fff;
+}
 .yky_bg{
 	background: url(../images/log_bg.gif) no-repeat fixed;
 	min-height: 100vh;

@@ -11,16 +11,30 @@
 			$state.go("cds");
 		}
 		$scope.sub=function(){
-			$http({
-			method:"post",
-			url:serve+"/item/",
-			data:$scope.updata,
-			}).then(function(e){
-				$state.go("cds");
-					console.log($scope.updata)
-			},function(){})
+			var b=true;
+			for(var i=0;i<$scope.updata.option.length;i++){
+				if($scope.updata.option[i].type==1||$scope.updata.option[i].type==2){
+				if($scope.updata.option[i].opt.length<2){
+					b=false;
+					break;
+				}else{
+					b=true;
+				}
+			}
 		}
-		
+			if(b){
+				$http({
+				method:"post",
+				url:serve+"/item/",
+				data:$scope.updata,
+				}).then(function(e){
+					$state.go("cds");
+						console.log($scope.updata)
+				},function(){})
+			}else{
+				alert("error")
+			}
+		}
 		}])
 	.directive("addque",function(){
 	return {
@@ -32,7 +46,7 @@
 		<label for="exampleInputEmail1" class="ng-binding">问题{{$index+1}}</label>\
 		</div>\
 		<div class="col-xs-2">\
-		<div style="color:#999" class="glyphicon glyphicon-remove" ng-click="sub_que()"></div>\
+		<div style="color:#999" class="glyphicon glyphicon-remove" ng-click="sub_que($index)"></div>\
 		</div>\
 		</div>\
 		<input ng-model="updata_que.title" type="text" class="form-control ng-pristine ng-valid ng-empty ng-valid-email ng-touched" id="exampleInputEmail1" placeholder="请输入你的问题" required>\
