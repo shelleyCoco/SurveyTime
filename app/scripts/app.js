@@ -43,9 +43,13 @@ angular
 			url:'/error',
 			templateUrl:'404.html'
 		}).state('graph',{
-			url:'/graph',
+			url:'/graph/:index',
 			controller:'graph',
 			templateUrl:'views/graph.html'
+		}).state('surveyPage',{
+			url:'/surveyPage/:index',
+			controller:'surveyPage',
+			templateUrl:'views/surveyPage.html'
 		});
 		$urlRouterProvider.when('','/login').otherwise('error')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
