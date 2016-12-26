@@ -1,6 +1,6 @@
 	angular.module("surveyTimeApp")
 	.constant("serve","http://47.90.20.200:1602")
-	.controller("create",['$scope','$http','serve','$state',function($scope,$http,serve,$state){
+	.controller("create",['$scope','$http','serve','$state','$timeout',function($scope,$http,serve,$state,$timeout){
 		$scope.updata={"uid":localStorage.uid,"title":"","id":"","option":[]};
 		$scope.updata.option=[];
 		$scope.add=function(){
@@ -11,16 +11,34 @@
 			$state.go("cds");
 		}
 		$scope.sub=function(){
-			$http({
-			method:"post",
-			url:serve+"/item/",
-			data:$scope.updata,
-			}).then(function(e){
-				$state.go("cds");
-					console.log($scope.updata)
-			},function(){})
+			var b=true;
+			for(var i=0;i<$scope.updata.option.length;i++){
+				if($scope.updata.option[i].type==1||$scope.updata.option[i].type==2){
+				if($scope.updata.option[i].opt.length<2){
+					b=false;
+					break;
+				}else{
+					b=true;
+				}
+			}
 		}
-		
+			if(b){
+				$http({
+				method:"post",
+				url:serve+"/item/",
+				data:$scope.updata,
+				}).then(function(e){
+					$state.go("cds");
+						console.log($scope.updata)
+				},function(){})
+			}else{
+					$scope.hintTitle = '选择题至少有两个选项';
+					$scope.hintB = true;
+					$timeout(function(){
+						$scope.hintB = false;
+					},1000)
+			}
+		}
 		}])
 	.directive("addque",function(){
 	return {
@@ -32,7 +50,7 @@
 		<label for="exampleInputEmail1" class="ng-binding">问题{{$index+1}}</label>\
 		</div>\
 		<div class="col-xs-2">\
-		<div style="color:#999" class="glyphicon glyphicon-remove" ng-click="sub_que()"></div>\
+		<div style="color:#999" class="glyphicon glyphicon-remove" ng-click="sub_que($index)"></div>\
 		</div>\
 		</div>\
 		<input ng-model="updata_que.title" type="text" class="form-control ng-pristine ng-valid ng-empty ng-valid-email ng-touched" id="exampleInputEmail1" placeholder="请输入你的问题" required>\
