@@ -39,14 +39,14 @@ angular.module('surveyTimeApp')
     	$state.go('create')
     }
     $scope.delete=function(index){
-    	console.log($scope.json[index].id)
+//  	console.log($scope.json[index].id)
     	var id=$scope.json[index].id
     	$http({
     		url:url+'/item/'+id,
     		method:'delete',
 
     	}).then(function(e){
-    		console.log(e)
+//  		console.log(e)
     		$scope.json.splice(index,1)
     	},function(){})
     };
@@ -66,7 +66,7 @@ angular.module('surveyTimeApp')
 		    		method:'delete',
 
 		    	}).then(function(e){
-		    		console.log(e)
+//		    		console.log(e)
 		    		$scope.gg();
 		    	},function(){})
     		}

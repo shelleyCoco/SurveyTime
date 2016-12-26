@@ -33,7 +33,7 @@ input.ng-invalid{
 	border: 1px solid #fff;
 }
 .yky_bg{
-	background: url(../images/log_bg.gif) no-repeat fixed;
+	background: url(../images/background.jpg) no-repeat bottom center;
 	min-height: 100vh;
 	color: #fff;
 }

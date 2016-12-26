@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <div class="bodyf">
 	<div class="cdsdada">
      <i>SurveyTime</i>
@@ -13,9 +6,10 @@
     <div class="cdsss">
         <form class="navbar-form navbar-left ng-pristine ng-valid mei" role="search"> <div class="form-group"> <input type="text" class="form-control" placeholder="Search"> </div> </form>
     </div>
+
     <ul class="cdsContent">
         <li ng-repeat="x in json">
-            <p>
+            <p ui-sref="graph({index:$index})">
                 <i>{{x.title}}</i>
                 <span class="cdsspan glyphicon glyphicon-remove" ng-click="delete($index)"></span>
             </p>
@@ -23,6 +17,7 @@
                 <span class="cdsqq"></span>
                 <span class="cdsvx"></span>
                 <span class="cdsfz">copy</span>
+                <span class="cdsxq" ui-sref="surveyPage({index:$index})">详情</span>
             </div>
             <div class="cdsnone" ng-show="cdschulai"> 
                 <div class="checkboxFour">
