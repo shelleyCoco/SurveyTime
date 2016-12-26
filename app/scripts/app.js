@@ -42,7 +42,7 @@ angular
 		}).state('error',{
 			url:'/error',
 			templateUrl:'404.html'
-		}).state('graph',{
+		}).state('cds.graph',{
 			url:'/graph',
 			controller:'graph',
 			templateUrl:'views/graph.html'
