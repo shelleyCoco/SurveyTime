@@ -42,7 +42,7 @@ angular
 		}).state('error',{
 			url:'/error',
 			templateUrl:'404.html'
-		});
+		})
 		$urlRouterProvider.when('','/login').otherwise('login')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
 		
