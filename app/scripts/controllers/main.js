@@ -13,6 +13,7 @@ angular.module('surveyTimeApp')
   	$scope.isshow=true;
   	$scope.cdschulai=false;
   	$scope.json=[];
+  	$scope.cdsff='';
   	var url='http://47.90.20.200:1602';
     $scope.gg=function(){
     	$http({
@@ -32,8 +33,14 @@ angular.module('surveyTimeApp')
     }
     $scope.gg();
     $scope.cdstc=function(){
-    	
     	$state.go('login')
+    }
+    $scope.cdsqx=function(){
+    	for(var i=0;i<$scope.json.length;i++){
+			$scope.json[i].checked=false;
+		}
+    	$scope.cdschulai=false;
+    	$scope.isshow=!$scope.isshow;
     }
     $scope.cdsxinzeng=function(){
     	$state.go('create')
@@ -74,7 +81,27 @@ angular.module('surveyTimeApp')
 		
     	$scope.cdschulai=false;
     }
-  }]);
+  }]).directive('search',[function(){
+	  	return {
+			restrict:'CAME',
+			scope:false,
+			template:'<div><div class="cdsss">\
+		        <form class="navbar-form navbar-left ng-pristine ng-valid mei" role="search"><div class="form-group"><input type="text" class="form-control" placeholder="Search" ng-model="sea"></div></form>\
+		    </div></div>',
+		    link:function(s,e,a){
+		    	$(document).scroll(function(){
+		    		//window.scrollTo(0,200)
+		    		console.log($(document).scrollTop())
+		    		if($(document).scrollTop()>100){
+		    			e.find('.cdsss').css({'position':'fixed','top':'3.2rem'})
+		    		}else{
+		    			e.find('.cdsss').css({'position':'','top':''})
+		    		}
+		    	})
+		    }
+		}
+    
+  }])
 
 
 
