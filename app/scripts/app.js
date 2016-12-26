@@ -42,10 +42,14 @@ angular
 		}).state('error',{
 			url:'/error',
 			templateUrl:'404.html'
-		}).state('cds.graph',{
-			url:'/graph',
+		}).state('graph',{
+			url:'/graph/:index',
 			controller:'graph',
 			templateUrl:'views/graph.html'
+		}).state('surveyPage',{
+			url:'/surveyPage/:index',
+			controller:'surveyPage',
+			templateUrl:'views/surveyPage.html'
 		});
 		$urlRouterProvider.when('','/graph').otherwise('error')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
