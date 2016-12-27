@@ -55,7 +55,7 @@ angular
 			controller:'forgot',
 			templateUrl:'views/forgot.html'
 		});
-		$urlRouterProvider.when('','/login').otherwise('error')
+		$urlRouterProvider.when('','/login').otherwise('/error')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
 		
 	}]).service('data',["$http",function($http){
@@ -64,6 +64,7 @@ angular
 				$http({
 					url:url,
 					method:"get",
+					params:{'uid':localStorage.uid}
 //					params:{"$skip":0,"$limit":10}
 				}).then(function(e){
 					cbk(e)

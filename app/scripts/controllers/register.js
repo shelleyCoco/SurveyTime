@@ -45,12 +45,16 @@ angular.module('surveyTimeApp').controller('register', ['$scope', '$http', '$fil
 				}).then(function() {
 					$scope.hintTitle='注册成功！'
 					$state.go('login')
+					$scope.hintB = true;
+                   	$timeout(function(){
+						$scope.hintB = false;
+					},1000)
 				}, function() {
 					$scope.hintTitle='用户名已有，请重新输入！';
-					 $scope.hintB = true;
-                   $timeout(function(){
-					$scope.hintB = false;
-				},1000)
+					$scope.hintB = true;
+                   	$timeout(function(){
+						$scope.hintB = false;
+					},1000)
 				})
 			}
 

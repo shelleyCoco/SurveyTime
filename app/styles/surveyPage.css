@@ -23,14 +23,19 @@
 	text-align: center;
 	font-family:"楷体";
 }
+.server_kong{
+	width:16rem;
+	height: 28.4rem;
+}
 .wjdc_bg{
 	width: 14rem;
 	height:auto;
 	margin: 0 auto;
-	margin-top: 29rem;
+	/*margin-top: 29rem;*/
 	border-width: 0.625rem;
 	border-style: solid;
 	border-image: url(../images/wjdc.png) 25 fill repeat;
+	margin-bottom: 2rem;
 
 }
 .wjdc_bg h2{

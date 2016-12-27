@@ -1,0 +1,149 @@
+/*父级*/
+*{margin:0;padding: 0;}
+.forgot_box{
+	width: 16rem;
+	/*height: 28.4rem;*/
+	/*height: auto;*/
+	height: 100%;
+	overflow: hidden;
+	background: url(../images/log_bg.gif) no-repeat center center;
+	background-size: cover;
+}
+/*logo*/
+.forgot_log{
+	width: 10rem;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 1.5rem;
+}
+.forgot_logpic{
+	width: 4.85rem;
+	height: 4.85rem;
+	border-radius: 50%;
+	background: #ffee58;
+	margin: 0 auto;
+}
+.forgot_logpic img{
+	width: 4.85rem;
+	height: 4.85rem;
+}
+.forgot_log h1{
+	font-size: 1.1rem;
+	color: #fff;
+	font-family: "微软雅黑";
+	text-align: center;
+	margin-top: 1rem;
+	letter-spacing:0.15rem;
+}
+.forgot_log p{
+	font-size: 0.5rem;
+	color: #fff048;
+	text-align: center;
+	margin-top: 0.75rem;
+	margin-bottom: 0;
+	letter-spacing:0.15rem;
+}
+/*user-passwo*/
+.forgot_uspa{
+	margin-top: 2rem;
+	padding: 0 1rem;
+	height: auto;
+	padding-bottom: 2rem;
+}
+.forgot_user{
+	height: 1.25rem;
+	margin-bottom: 0.95rem;
+}
+.forgot_user_logo{
+	width: 1.25rem;
+	height: 1.25rem;
+	font-size: 1.25rem;
+	color: #fff;
+	float: left;
+}
+.forgot_user input{
+	border: none;
+	border-bottom: 0.025rem solid #8f9499;
+	height: 1.25rem;
+	width: 100%;
+	margin-left: 0.5rem;
+	float: left;
+	background: transparent;
+	width: 12.125rem;
+	font-size: 0.45rem;
+	color: #ccc;
+}
+.forgot_submit{
+	width: 100%;
+	height: auto;
+	text-align: center;
+	margin-top:2.5rem;
+}
+.forgot_submit_log{
+	display: block;
+	width: 100%;
+	height: 2.25rem;
+	line-height: 2.25rem;
+	font-size: 0.475rem;
+	font-weight: bold;
+	color: #434a54;
+	border-radius: 0.25rem;
+	background: #ffee58;
+}
+/*.forgot_submit_log:hover{
+	color: #434a54;
+	text-decoration: none;
+}*/
+/*.forgot_submit p{
+	height: 2.25rem;
+	line-height: 2.25rem;
+	font-size: 0.4rem;
+	color: #fcfcfc;
+}*/
+.forgot_submit_regist{
+	display: block;
+	width: 100%;
+	line-height: 2.25rem;
+	font-size: 0.475rem;
+	font-weight: bold;
+	color: #ffee58;
+	background: #263238;
+	border-radius: 0.25rem;
+	margin-top:2.25rem;
+}
+/*.forgot_submit_regist:hover{
+	color: #ffee58;
+	text-decoration: none;
+}*/
+.forgot_code{
+	height: 200px;
+}
+.wjy_tishi{
+	width:80%;
+	height: 3rem;
+	background:#263238;
+	position:absolute;
+	top:60%;
+	left:10%;
+	text-align:center;
+	line-height:3rem;
+	color:red;
+	font-weight: bolder;
+	display:none;
+	z-index:999;
+	font-size: 0.8rem;
+	border-radius:1rem;
+}
+.hintBox{
+	width: 10rem;
+	height: 3rem;
+	position: absolute;
+	top: 46%;
+	left: 50%;
+	margin-left: -5rem;
+	background: rgba(255,255,255,.5);
+	color: #222222;
+	text-align: center;
+	line-height: 3rem;
+	border-radius: .25rem;
+}

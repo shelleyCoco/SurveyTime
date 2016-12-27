@@ -36,7 +36,7 @@
 	letter-spacing: 0.15rem;
 }
 .log_log p{
-	font-size: 0.375rem;
+	font-size: 0.5rem;
 	color: #fff048;
 	text-align: center;
 	margin-top: 0.75rem;
@@ -45,7 +45,7 @@
 }
 /*user-passwo*/
 .log_uspa{
-	margin-top: 2.5rem;
+	margin-top: 2rem;
 	padding: 0 1rem;
 	height: auto;
 	padding-bottom: 1.5rem;
@@ -90,10 +90,10 @@
 	border-radius: 0.25rem;
 	background: #ffee58;
 }
-.log_submit_log:hover{
+/*.log_submit_log:hover{
 	text-decoration: none;
 	color: #434a54;
-}
+}*/
 .log_submit_forgot{
 	height: 2.25rem;
 	line-height: 2.25rem;
@@ -102,10 +102,10 @@
 	margin-bottom: 0;
 	display: block;
 }
-.log_submit_forgot:hover{
+/*.log_submit_forgot:hover{
 	color: #fff;
 	text-decoration: none;
-}
+}*/
 .log_submit_regist{
 	display: block;
 	width: 100%;
@@ -116,10 +116,10 @@
 	background: #263238;
 	border-radius: 0.25rem;
 }
-.log_submit_regist:hover{
+/*.log_submit_regist:hover{
 	text-decoration: none;
 	color: #ffee58;
-}
+}*/
 .log_code{
 	height: auto;
 }
