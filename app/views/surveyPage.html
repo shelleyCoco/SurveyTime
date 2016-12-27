@@ -1,27 +1,36 @@
 <div ng-controller="surveyPage">
 	<div class="server_box">
 		<div class="surveypage_bg">
-			<!--<h1>{{updata.title}}</h1>-->
-			<h1>标题一</h1>
+			<h1>{{updata.title}}</h1>
 			<div class="wjdc_bg">
-				<div class="neir">
-					<h2>1.哈哈哈?</h2>
-			    	<input type="checkbox">111
-				</div>
-				<div class="neir">
-					<h2>1.哈哈哈?</h2>
-			    	<input type="radio">111
-				</div>
-				<div class="neir">
-					<h2>1.哈哈哈?</h2>
-			    	<input style="border:0.1rem #F5F5F5 solid;" type="text"  />
-				</div>
-				<div class="neir">
-					<h2>1.哈哈哈?</h2>
-			    	<textarea></textarea>
-				</div>
-		    	<button style="bottom:10%;position:relative;" class="btn btn-primary">提交</button>
-	     </div>
+				<div>
+					<div class="neir"  ng-repeat=" item in wcledata1">
+						<h2>{{$index+1}}.(单选){{item.title}}?</h2>
+						<div ng-repeat=" x in item.opt">
+							<input type="radio" name="{{item.token}}"  id="checkboxFourInputr{{$index}}" />
+							<label for="checkboxFourInputr{{$index}}">{{x.op}}</label>
+						</div>
+					</div>
+					<div class="neir" ng-repeat=" item in wcledata2"> 
+						<h2>{{$index+1}}.(多选){{item.title}}?</h2>
+				    	<div ng-repeat="x in item.opt">
+							<input type="checkbox" name=""  id="checkboxFourInputc{{$index}}" />
+							<label for="checkboxFourInputc{{$index}}">{{x.op}}</label>
+						</div>
+					</div>
+					<div class="neir"  ng-repeat="item in wcledata0">
+						<h2>{{$index+1}}.(填空){{item.title}}?</h2>
+				    	<input style="border:0.1rem #ccc solid;" type="text"  />
+					</div>
+					<div class="neir" ng-repeat="item in wcledata3">
+						
+						<h2>{{$index+1}}.(简答){{item.title}}?</h2>
+				    	<textarea style="border:0.1rem #ccc solid;"></textarea>
+					</div>
+			    	
+		     </div>
+	     <button style="bottom:10%;position:relative;" class="btn btn-primary" ng-click="Fn()">提交</button>
+		</div>
 		</div>
 	    
 	</div>

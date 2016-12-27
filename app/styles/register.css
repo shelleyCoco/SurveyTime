@@ -90,6 +90,10 @@
 	background: #ffee58;
 	margin-top:2.5rem;
 }
+.reg_submit_log:hover{
+	color: #434a54;
+	text-decoration: none;
+}
 .reg_submit p{
 	height: 2.25rem;
 	line-height: 2.25rem;
@@ -105,7 +109,11 @@
 	color: #ffee58;
 	background: #263238;
 	border-radius: 0.25rem;
-	margin-top:1.5rem;
+	margin-top:2.25rem;
+}
+.reg_submit_regist:hover{
+	color: #ffee58;
+	text-decoration: none;
 }
 .reg_code{
 	height: 200px;
