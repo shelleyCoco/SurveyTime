@@ -12,6 +12,9 @@
 		}
 		$scope.sub=function(){
 			var b=true;
+			if($scope.updata.option.length==0){
+				b=false;
+			}else{
 			for(var i=0;i<$scope.updata.option.length;i++){
 				if($scope.updata.option[i].type==1||$scope.updata.option[i].type==2){
 				if($scope.updata.option[i].opt.length<2){
@@ -22,6 +25,7 @@
 				}
 			}
 		}
+			}
 			if(b){
 				$http({
 				method:"post",
@@ -29,8 +33,13 @@
 				data:$scope.updata,
 				}).then(function(e){
 					$state.go("cds");
-						console.log($scope.updata)
 				},function(){})
+			}else if($scope.updata.option.length==0&&b==false){
+					$scope.hintTitle = '至少有一个问题';
+					$scope.hintB = true;
+					$timeout(function(){
+						$scope.hintB = false;
+					},1000)
 			}else{
 					$scope.hintTitle = '选择题至少有两个选项';
 					$scope.hintB = true;
