@@ -51,7 +51,7 @@ angular
 			controller:'surveyPage',
 			templateUrl:'views/surveyPage.html'
 		});
-		$urlRouterProvider.when('','/graph').otherwise('error')
+		$urlRouterProvider.when('','/login').otherwise('/error')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
 		
 	}]).service('data',["$http",function($http){
