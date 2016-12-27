@@ -91,7 +91,7 @@ angular.module('surveyTimeApp')
 		    link:function(s,e,a){
 		    	$(document).scroll(function(){
 		    		//window.scrollTo(0,200)
-		    		console.log($(document).scrollTop())
+		    		//console.log($(document).scrollTop())
 		    		if($(document).scrollTop()>100){
 		    			e.find('.cdsss').css({'position':'fixed','top':'3.2rem'})
 		    		}else{
