@@ -1,20 +1,21 @@
+<div class="cdsdada head">
+	<div class="glyphicon glyphicon-chevron-left yky_cancel" ng-click="back()"></div>
+	<i>SurveyTime</i>
+</div>
 <div class='container '>
 	<h1>标题：{{json.title}}</h1>
-	<div class="panel panel-default" ng-repeat = 'm in listArr'>
+	<div class="panel panel-default" ng-repeat='m in listArr'>
 		<div class="panel-heading titleBg">{{$index+1}}.{{m.title}}</div>
 		<div class="panel-body">
 			<p ng-show='noNum'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
-			<canvas ng-hide = 'noNum' id="doughnut" class="chart chart-doughnut" chart-data="mesg.arr2[$index]" chart-labels="mesg.arr[$index]">
+			<canvas ng-hide='noNum' id="doughnut" class="chart chart-doughnut" chart-data="mesg.arr2[$index]" chart-labels="mesg.arr[$index]">
 </canvas>
 		</div>
 	</div>
-	<div class='noList'  ng-show = 'noList'>
-		
+	<div class='noList' ng-show='noList'>
+
 		<div class="ico_empty"></div>
 		<p class="">没有数据噢</p>
 	</div>
-	
-	
-
 
 </div>

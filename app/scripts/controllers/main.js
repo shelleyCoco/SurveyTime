@@ -22,8 +22,12 @@ angular.module('surveyTimeApp')
 	  		params:{'uid':localStorage.uid}
 	    }).then(function(e){
 			console.log(e)
-
+			
 			$scope.json=e.data;
+			if($scope.json.length == 0){
+				$scope.noList = true
+				return
+			}
 			for(var i=0;i<$scope.json.length;i++){
 				$scope.json[i].checked=false;
 			}
@@ -33,6 +37,7 @@ angular.module('surveyTimeApp')
     }
     $scope.gg();
     $scope.cdstc=function(){
+    	localStorage.clear()
     	$state.go('login')
     }
     $scope.cdsqx=function(){
@@ -42,6 +47,11 @@ angular.module('surveyTimeApp')
     	$scope.cdschulai=false;
     	$scope.isshow=!$scope.isshow;
     }
+	if(!(localStorage.uid)){
+//		$scope.hintTitle = '您还没有登陆，请<a ui-serf="/login">登录</a>';
+//		$scope.hintB = true
+		return
+	}
     $scope.cdsxinzeng=function(){
     	$state.go('create')
     }

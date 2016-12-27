@@ -7,11 +7,16 @@
 	width: 100%;
 	height: 100%;
 	min-height: 100vh;
+	padding-top: 3.2rem;
 	background: #f5f5f5;
 }
 .noList{
 	text-align: center;font: 1rem "微软雅黑";
-	margin-top: 65%;
+	margin-top: 50%;
+	color: #B3B3B3;
+}
+.noList p{
+	margin-top: .3rem;
 }
 .ico_empty{
     width: 3.43rem;

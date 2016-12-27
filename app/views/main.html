@@ -5,6 +5,11 @@
      <span ng-click="cdsqx()" ng-show="!isshow">取消</span>
     </div>
     <search></search>
+    <div class='noList' ng-show='noList'>
+
+		<div class="ico_empty"></div>
+		<p class="">没有数据噢</p>
+	</div>
     <ul class="cdsContent">
         <li ng-repeat="x in json |filter:sea">
             <p ui-sref="graph({index:x.id})">
@@ -28,8 +33,12 @@
     <Div class="cdsposition">
         <div class="cdsbottom clearFix">
             
-            <div class="cdsbottomco fl glyphicon glyphicon-plus-sign" ng-click="cdsxinzeng()"></div>
-            <div class="cdsbottomri fl glyphicon glyphicon-edit" ng-show="isshow" ng-click="cdsAll()"></div>
+            <div class="cdsbottomco fl glyphicon glyphicon-plus-sign" ng-click="cdsxinzeng()">
+            	<p>新增</p>
+            </div>
+            <div class="cdsbottomri fl glyphicon glyphicon-edit" ng-show="isshow" ng-click="cdsAll()">
+            	<p>管理</p>
+            </div>
             <div class="cdsbottomri fl glyphicon glyphicon-trash" ng-click="cdsDel()" ng-show="!isshow"></div>
         </div>
     </Div>

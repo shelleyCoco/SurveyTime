@@ -1,6 +1,9 @@
 angular.module("surveyTimeApp")
 	.constant("serve", "http://47.90.20.200:1602")
-	.controller('graph', ['$scope', 'data', 'url', '$stateParams', function($scope, data, url, $stateParams) {
+	.controller('graph', ['$scope', 'data', 'url', '$stateParams','$state', function($scope, data, url, $stateParams,$state) {
+		$scope.back=function(){
+			$state.go("cds");
+		}
 		//		$scope.json = {
 		//				"option": [{
 		//					"title": "你每天学习几个小时？",
@@ -100,5 +103,6 @@ angular.module("surveyTimeApp")
 
 			//			console.log($scope.mesg.arr2)
 		})
+		
 
 	}]);
