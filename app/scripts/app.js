@@ -47,7 +47,7 @@ angular
 			controller:'graph',
 			templateUrl:'views/graph.html'
 		}).state('surveyPage',{
-			url:'/surveyPage/:index',
+			url:'/surveyPage/:id',
 			controller:'surveyPage',
 			templateUrl:'views/surveyPage.html'
 		}).state('forgot',{
