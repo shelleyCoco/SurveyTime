@@ -20,7 +20,7 @@ angular.module('surveyTimeApp')
 	  		method:'get',
 	  		params:{'uid':localStorage.uid}
 	    }).then(function(e){
-			console.log(e)
+//			console.log(e)
 
 			$scope.json=e.data;
 			for(var i=0;i<$scope.json.length;i++){
@@ -66,7 +66,7 @@ angular.module('surveyTimeApp')
 		    		method:'delete',
 
 		    	}).then(function(e){
-//		    		console.log(e)
+		    		console.log(e)
 		    		$scope.gg();
 		    	},function(){})
     		}

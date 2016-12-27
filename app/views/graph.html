@@ -1,24 +1,20 @@
-<div class='container'>
-    <h1>你爱学习吗</h1>
-    <div class="panel panel-default">
-  <div class="panel-heading">你一天学习几个小时</div>
-  <div class="panel-body">
-    <canvas id="doughnut" class="chart chart-doughnut"
-  chart-data="data" chart-labels="labels">
-</canvas> 
-  </div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">你觉得你爱学习吗</h3>
-  </div>
-  <div class="panel-body">
-   <canvas id="bar" class="chart chart-bar"
-  chart-data="data" chart-labels="labels"> chart-series="series"
+<div class='container '>
+	<h1>标题：{{json.title}}</h1>
+	<div class="panel panel-default" ng-repeat = 'm in listArr'>
+		<div class="panel-heading titleBg">{{$index+1}}.{{m.title}}</div>
+		<div class="panel-body">
+			<p ng-show='noNum'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
+			<canvas ng-hide = 'noNum' id="doughnut" class="chart chart-doughnut" chart-data="mesg.arr2[$index]" chart-labels="mesg.arr[$index]">
 </canvas>
-  </div>
-</div>
+		</div>
+	</div>
+	<div class='noList'  ng-show = 'noList'>
+		
+		<div class="ico_empty"></div>
+		<p class="">没有数据噢</p>
+	</div>
+	
+	
 
-    
+
 </div>
