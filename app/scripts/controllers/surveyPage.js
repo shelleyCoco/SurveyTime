@@ -33,6 +33,6 @@ angular.module("surveyTimeApp")
       console.log($scope.wcledata1)
    },function(){})
    $scope.Fn=function(){
-      
+     
    }
 	}])
