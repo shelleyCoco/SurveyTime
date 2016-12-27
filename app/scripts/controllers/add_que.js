@@ -59,7 +59,7 @@
 		<label for="exampleInputEmail1" class="ng-binding">问题{{$index+1}}</label>\
 		</div>\
 		<div class="col-xs-2">\
-		<div style="color:#999" class="glyphicon glyphicon-remove" ng-click="sub_que($index)"></div>\
+		<div style="color:#999" class="glyphicon glyphicon-remove" data-toggle="modal" data-target="#assetDelete" ng-click="dele($index)"></div>\
 		</div>\
 		</div>\
 		<input ng-model="updata_que.title" type="text" class="form-control ng-pristine ng-valid ng-empty ng-valid-email ng-touched" id="exampleInputEmail1" placeholder="请输入你的问题" required>\
@@ -79,18 +79,22 @@
 	<div ng-if="bool">\
 		<div ng-repeat="updata_xx in updata_que.opt" class="row yky_mt">\
 		<div class="col-xs-10">\
-			<input type="text" class="form-control ng-pristine ng-valid ng-empty ng-valid-email ng-touched" id="exampleInputEmail1" placeholder="请输入选项内容" ng-model="updata_xx.op" required>\
+			<input type="text" class="form-control ng-pristine ng-valid ng-empty ng-valid-email ng-touched" placeholder="请输入选项内容" ng-model="updata_xx.op" required>\
 			</div>\
 			<div class="col-xs-2 yky_pl">\
 		<div style="color:#999" class="btn btn-default glyphicon glyphicon-minus" ng-click="sub_danx($index)"></div>\
 		</div>\
 		</div>\
 	</div>\
+   <dele></dele>\
 </div>',
 		transclude:true,//开启保留原内容，需要ng-transclude在模板xx中的某个标签中配合，把原内容放在这个标签中
 		replace:false,
 		scope:true,
 		link:function(scope,element,attrs){
+		scope.dele=function(){
+			scope.ab=true;
+		}
 		scope.sub_que=function(a){
 			scope.updata.option.splice(a,1);
 		}
@@ -133,4 +137,19 @@
 		
 		}
 	}
+	})
+	.directive("dele",function(){
+		return {
+			restrict:"ECMA",
+			template:'<div class="shan_bg" ng-if="ab"><div class="shan_que"><p>确认删除？</p><p><span id="k_quxiao" ng-click="qx()">取消</span><span id="k_shanchu" ng-click="sub_que($index)">删除</span></p></div></div>',
+			transclude:true,//开启保留原内容，需要ng-transclude在模板xx中的某个标签中配合，把原内容放在这个标签中
+			replace:false,
+			scope:false,
+			link:function(scope,ele,attrs){
+				scope.ab=false;
+				scope.qx=function(){
+					scope.ab=false;
+				}
+			}
+		}
 	})
