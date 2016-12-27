@@ -1,23 +1,21 @@
 <div class="bodyf">
 	<div class="cdsdada">
      <i>SurveyTime</i>
-     <span ng-click="cdstc()">退出</span>
+     <span ng-click="cdstc()" ng-show="isshow">退出</span>
+     <span ng-click="cdsqx()" ng-show="!isshow">取消</span>
     </div>
-    <div class="cdsss">
-        <form class="navbar-form navbar-left ng-pristine ng-valid mei" role="search"> <div class="form-group"> <input type="text" class="form-control" placeholder="Search"> </div> </form>
-    </div>
-
+    <search></search>
     <ul class="cdsContent">
-        <li ng-repeat="x in json">
+        <li ng-repeat="x in json |filter:sea">
             <p ui-sref="graph({index:$index})">
                 <i>{{x.title}}</i>
-                <span class="cdsspan glyphicon glyphicon-remove" ng-click="delete($index)"></span>
             </p>
+            <span class="cdsspan glyphicon glyphicon-remove" ng-click="delete($index)"></span>
             <div class="cdsfenxiang clearFix">
                 <span class="cdsqq"></span>
                 <span class="cdsvx"></span>
                 <span class="cdsfz">copy</span>
-                <span class="cdsxq" ui-sref="surveyPage({index:$index})">详情</span>
+                <span class="cdsxq" ui-sref="surveyPage({id:x.id})">详情</span>
             </div>
             <div class="cdsnone" ng-show="cdschulai"> 
                 <div class="checkboxFour">
