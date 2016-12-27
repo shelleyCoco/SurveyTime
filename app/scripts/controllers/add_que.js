@@ -86,7 +86,7 @@
 		</div>\
 		</div>\
 	</div>\
-   <dele></dele>\
+   <delet></delet>\
 </div>',
 		transclude:true,//开启保留原内容，需要ng-transclude在模板xx中的某个标签中配合，把原内容放在这个标签中
 		replace:false,
@@ -138,7 +138,7 @@
 		}
 	}
 	})
-	.directive("dele",function(){
+	.directive("delet",function(){
 		return {
 			restrict:"ECMA",
 			template:'<div class="shan_bg" ng-if="ab"><div class="shan_que"><p>确认删除？</p><p><span id="k_quxiao" ng-click="qx()">取消</span><span id="k_shanchu" ng-click="sub_que($index)">删除</span></p></div></div>',
