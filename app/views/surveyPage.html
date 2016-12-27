@@ -5,26 +5,27 @@
 			<div class="wjdc_bg">
 				<div>
 					<div class="neir"  ng-repeat=" item in wcledata1">
-						<h2>{{item.title}}(单选)?</h2>
+						<h2>{{$index+1}}.(单选){{item.title}}?</h2>
 						<div ng-repeat=" x in item.opt">
 							<input type="radio" name="{{item.token}}"  id="checkboxFourInputr{{$index}}" />
 							<label for="checkboxFourInputr{{$index}}">{{x.op}}</label>
 						</div>
 					</div>
 					<div class="neir" ng-repeat=" item in wcledata2"> 
-						<h2>{{item.title}}.多选?</h2>
+						<h2>{{$index+1}}.(多选){{item.title}}?</h2>
 				    	<div ng-repeat="x in item.opt">
 							<input type="checkbox" name=""  id="checkboxFourInputc{{$index}}" />
 							<label for="checkboxFourInputc{{$index}}">{{x.op}}</label>
 						</div>
 					</div>
 					<div class="neir"  ng-repeat="item in wcledata0">
-						<h2>{{item.title}}.填空?</h2>
-				    	<input style="border:0.1rem #F5F5F5 solid;" type="text"  />
+						<h2>{{$index+1}}.(填空){{item.title}}?</h2>
+				    	<input style="border:0.1rem #ccc solid;" type="text"  />
 					</div>
 					<div class="neir" ng-repeat="item in wcledata3">
-						<h2>1{{item.title}}.简答?</h2>
-				    	<textarea></textarea>
+						
+						<h2>{{$index+1}}.(简答){{item.title}}?</h2>
+				    	<textarea style="border:0.1rem #ccc solid;"></textarea>
 					</div>
 			    	
 		     </div>
