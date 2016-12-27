@@ -94,12 +94,17 @@
 	text-decoration: none;
 	color: #434a54;
 }
-.log_submit p{
-	height: 1.5rem;
+.log_submit_forgot{
+	height: 2.25rem;
 	line-height: 2.25rem;
 	font-size: 0.4rem;
 	color: #fcfcfc;
 	margin-bottom: 0;
+	display: block;
+}
+.log_submit_forgot:hover{
+	color: #fff;
+	text-decoration: none;
 }
 .log_submit_regist{
 	display: block;
