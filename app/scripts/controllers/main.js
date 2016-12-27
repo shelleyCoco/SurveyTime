@@ -117,10 +117,10 @@ angular.module('surveyTimeApp')
 		}
     
   }])
-  .directive('dele',function(){
+  .directive("dele",function(){
 		return {
 			restrict:"ECMA",
-			template:'<div class="shan_bg" ng-if="ab"><div class="shan_que"><p>确认删除？</p><p><span id="k_quxiao" ng-click="qx()">取消</span><span id="k_shanchu"  ng-click="delete(aa)">删除</span></p></div></div>',
+			template:'<div class="shan_bg" ng-if="ab"><div class="shan_que"><p>确认删除？</p><p><span id="k_quxiao" ng-click="qx()">取消</span><span id="k_shanchu" ng-click="delete(aa)">删除</span></p></div></div>',
 			transclude:true,
 			replace:false,
 			scope:false,
