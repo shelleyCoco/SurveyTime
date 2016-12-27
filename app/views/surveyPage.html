@@ -1,13 +1,14 @@
 <div ng-controller="surveyPage">
 	<div class="server_box">
 		<div class="surveypage_bg">
-			<h1>{{updata.title}}</h1>
-			<div class="server_kong"></div>
+			<div class="title_head">
+				<h1>{{updata.title}}</h1>
+			</div>
 			<div class="wjdc_bg">
 				<div>
 					<div class="neir"  ng-repeat=" item in wcledata1">
 						<h2>{{$index+1}}.(单选){{item.title}}?</h2>
-						<div ng-repeat=" x in item.opt">
+						<div ng-repeat=" x in item.opt" class="page_radio">
 							<input type="radio" name="{{item.token}}"  id="checkboxFourInputr{{$index}}" />
 							<label for="checkboxFourInputr{{$index}}">{{x.op}}</label>
 						</div>
@@ -30,7 +31,7 @@
 					</div>
 			    	
 		     </div>
-	     <button style="bottom:10%;position:relative;" class="btn btn-primary" ng-click="Fn()">提交</button>
+	     <button style="bottom:10%;position:relative;" class="btn btn-primary page_btn" ng-click="Fn()">提交</button>
 		</div>
 		</div>
 	    

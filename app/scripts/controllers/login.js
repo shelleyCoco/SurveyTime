@@ -68,7 +68,7 @@ angular
 						username: $scope.loginuser,
 						password: $scope.loginpass
 					},
-					dataType: 'json',
+					dataType: 'json'
 				}).then(function(e) {
 					console.log(e)
 					if(status = '200'){

@@ -8,21 +8,35 @@ angular
 		$scope.modconfirm = '';
 		$scope.clickConfirm = function() {
 			$http({
-				url: url+"users",
-				method: 'put',
+				url: url+"users/login",
+				method: 'post',
 				data: {
 					'username': $scope.modusername,
-					'password': $scope.modpassword,
-					'confirm': $scope.modconfirm
-				}
+					'password': $scope.modpassword
+				},
 			}).then(function(e) {
 				console.log(e)
-				$scope.hintTitle='注册成功！'
-				$state.go('login')
-				$scope.hintB = true;
-               	$timeout(function(){
-					$scope.hintB = false;
-				},1000)
+				console.log(e.data.id)
+				var moduid = e.data.id
+				$http({
+					url:url+'user/'+ moduid,
+					method:'put',
+					data:{
+						'username':$scope.modusername,
+						'password':$scope.modconfirm
+					}
+				}).then(function(e){
+//					console.log(e)
+					alert(1)
+				},function(){
+					
+				})
+//				$scope.hintTitle='注册成功！'
+//				$state.go('login')
+//				$scope.hintB = true;
+//             	$timeout(function(){
+//					$scope.hintB = false;
+//				},1000)
 			}, function() {
 //				$scope.hintTitle='用户名已有，请重新输入！';
 //				$scope.hintB = true;
