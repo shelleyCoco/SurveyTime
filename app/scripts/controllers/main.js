@@ -90,6 +90,7 @@ angular.module('surveyTimeApp')
 			template: '<div><div class="cdsss">\
 		        <form class="navbar-form navbar-left ng-pristine ng-valid mei" role="search"><div class="form-group"><input type="text" class="form-control" placeholder="Search" ng-model="sea"></div></form>\
 		    </div></div>',
+<<<<<<< HEAD
 			link: function(s, e, a) {
 				$(document).scroll(function() {
 					//window.scrollTo(0,200)
@@ -107,6 +108,18 @@ angular.module('surveyTimeApp')
 					}
 				})
 			}
+=======
+		    link:function(s,e,a){
+		    	$(document).scroll(function(){
+		    		//window.scrollTo(0,200)
+		    		if($(document).scrollTop()>100){
+		    			e.find('.cdsss').css({'position':'fixed','top':'3.2rem'})
+		    		}else{
+		    			e.find('.cdsss').css({'position':'','top':''})
+		    		}
+		    	})
+		    }
+>>>>>>> origin/master
 		}
 
 	}])

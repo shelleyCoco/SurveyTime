@@ -33,11 +33,15 @@ input.ng-invalid{
 	border: 1px solid #fff;
 }
 .yky_bg{
-	background: url(../images/background.jpg) no-repeat fixed;
+	background: url(../images/log_bg.gif) no-repeat fixed;
 	min-height: 100vh;
 	color: #fff;
+	padding-bottom: 0.6rem;
 }
-
+.yky_bg .head{
+	background: rgba(20,33,43,0.8);
+	color: #fff;
+}
 .yky_bg div{
 	background: rgba(255,255,255,0);
 }
@@ -80,6 +84,7 @@ input.ng-invalid{
 	margin-left: 0.8rem;
 	line-height: 3.2rem;
 	font-size: 1rem;
+	color: #007aff;
 }
 .yky_pl{
 	padding-left: 0;
