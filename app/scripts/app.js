@@ -60,6 +60,7 @@ angular
 				$http({
 					url:url,
 					method:"get",
+					params:{'uid':localStorage.uid}
 //					params:{"$skip":0,"$limit":10}
 				}).then(function(e){
 					cbk(e)
