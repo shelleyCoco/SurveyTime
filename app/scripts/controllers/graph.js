@@ -64,9 +64,8 @@ angular.module("surveyTimeApp")
 			data: []
 		}
 		var total = 0
-		data.get(url + 'item/', function(e) {
-			var list = e.data
-			$scope.json = list[index]
+		data.get(url + 'item/'+index, function(e) {
+			$scope.json = e.data
 				//			console.log($scope.json)
 				if($scope.json.option.length == 0){
 					$scope.noList = true
