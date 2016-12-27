@@ -2,7 +2,10 @@
 .bodyf{background:#f5f5f5;padding-top:3.2rem;margin-bottom:2.5rem;position:relative;height:100%;width: 100%;}
 
 .cdsdada{width:100%;height:3.2rem;border-bottom:0.025rem solid #ccc;line-height:3.2rem;position:fixed;top:0;background:#fff;z-index:2;}
-.cdsdada i{float:left;font-size:1.5rem;margin-left:2rem;}
+.cdsdada i{float:left;font-size:1.5rem;margin-left:2.15rem;}
+.cdsdada .logo{
+	margin-left: 4rem;
+}
 .cdsdada span{float:right;padding:0 0.825rem;}
 .cdsss{width:100%;height:auto;z-index: 1000;background:#f5f5f5;}
 
