@@ -34,6 +34,7 @@ input.ng-invalid{
 }
 .yky_bg{
 	background: url(../images/log_bg.gif) no-repeat fixed;
+	background-size: cover;
 	min-height: 100vh;
 	color: #fff;
 	padding-bottom: 0.6rem;

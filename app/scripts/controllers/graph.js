@@ -75,12 +75,16 @@ angular.module("surveyTimeApp")
 					return
 				}
 			for(var y = 0; y < $scope.json.option.length; y++) {
-				
 				if($scope.json.option[y].type == 2 || $scope.json.option[y].type == 1) {
 					listArr.push($scope.json.option[y])
+					
 				}
 			}
 			$scope.listArr = listArr
+			if(listArr.length == 0){
+					$scope.noList = true
+					return
+				}
 			for(var i = 0; i < listArr.length; i++) {
 				for(var x = 0; x < listArr[i].opt.length; x++) {
 					$scope.list.labels.push(listArr[i].opt[x].op)
