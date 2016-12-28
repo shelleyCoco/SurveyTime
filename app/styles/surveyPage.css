@@ -7,17 +7,23 @@
 .surveypage_bg{
 	width:16rem;
 	height: auto;
-	min-height: 100vh;
-	/*height:28.4rem;*/
-	background: url(../images/log_bg.gif) no-repeat center center fixed;
 	background-size: cover;
-	/*position:fixed;*/
 	overflow: hidden;
+}
+.page_bg{
+	width: 16rem;
+	min-height: 100vh;
+	background: url(../images/log_bg.gif) no-repeat center center;
+	position: fixed;
+	z-index: -2;
+	top: 0;
+	left: 0;
 }
 .title_head{
 	width: 100%;
 	height: auto;
 	position: fixed;
+	z-index: -1;
 }
 .surveypage_bg h1{
 	height: auto;
