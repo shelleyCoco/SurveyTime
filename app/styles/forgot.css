@@ -1,6 +1,6 @@
 /*父级*/
 *{margin:0;padding: 0;}
-.reg_box{
+.forgot_box{
 	width: 16rem;
 	/*height: 28.4rem;*/
 	/*height: auto;*/
@@ -10,24 +10,24 @@
 	background-size: cover;
 }
 /*logo*/
-.reg_log{
+.forgot_log{
 	width: 10rem;
 	height: auto;
 	margin: 0 auto;
 	margin-top: 1.5rem;
 }
-.reg_logpic{
+.forgot_logpic{
 	width: 4.85rem;
 	height: 4.85rem;
 	border-radius: 50%;
 	background: #ffee58;
 	margin: 0 auto;
 }
-.reg_logpic img{
+.forgot_logpic img{
 	width: 4.85rem;
 	height: 4.85rem;
 }
-.reg_log h1{
+.forgot_log h1{
 	font-size: 1.1rem;
 	color: #fff;
 	font-family: "微软雅黑";
@@ -35,7 +35,7 @@
 	margin-top: 1rem;
 	letter-spacing:0.15rem;
 }
-.reg_log p{
+.forgot_log p{
 	font-size: 0.5rem;
 	color: #fff048;
 	text-align: center;
@@ -44,24 +44,24 @@
 	letter-spacing:0.15rem;
 }
 /*user-passwo*/
-.reg_uspa{
+.forgot_uspa{
 	margin-top: 2rem;
 	padding: 0 1rem;
 	height: auto;
 	padding-bottom: 2rem;
 }
-.reg_user{
+.forgot_user{
 	height: 1.25rem;
 	margin-bottom: 0.95rem;
 }
-.reg_user_logo{
+.forgot_user_logo{
 	width: 1.25rem;
 	height: 1.25rem;
 	font-size: 1.25rem;
 	color: #fff;
 	float: left;
 }
-.reg_user input{
+.forgot_user input{
 	border: none;
 	border-bottom: 0.025rem solid #8f9499;
 	height: 1.25rem;
@@ -73,12 +73,13 @@
 	font-size: 0.45rem;
 	color: #ccc;
 }
-.reg_submit{
+.forgot_submit{
 	width: 100%;
 	height: auto;
 	text-align: center;
+	margin-top:2.5rem;
 }
-.reg_submit_log{
+.forgot_submit_log{
 	display: block;
 	width: 100%;
 	height: 2.25rem;
@@ -88,19 +89,18 @@
 	color: #434a54;
 	border-radius: 0.25rem;
 	background: #ffee58;
-	margin-top:2.5rem;
 }
-/*.reg_submit_log:hover{
+/*.forgot_submit_log:hover{
 	color: #434a54;
 	text-decoration: none;
 }*/
-.reg_submit p{
+/*.forgot_submit p{
 	height: 2.25rem;
 	line-height: 2.25rem;
 	font-size: 0.4rem;
 	color: #fcfcfc;
-}
-.reg_submit_regist{
+}*/
+.forgot_submit_regist{
 	display: block;
 	width: 100%;
 	line-height: 2.25rem;
@@ -111,11 +111,11 @@
 	border-radius: 0.25rem;
 	margin-top:2.25rem;
 }
-/*.reg_submit_regist:hover{
+/*.forgot_submit_regist:hover{
 	color: #ffee58;
 	text-decoration: none;
 }*/
-.reg_code{
+.forgot_code{
 	height: 200px;
 }
 .wjy_tishi{

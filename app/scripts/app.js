@@ -52,9 +52,12 @@ angular
 			templateUrl:'views/surveyPage.html'
 		}).state('submit',{
 			url:'/submit',
-//			controller:'submit',
 			templateUrl:'views/submit.html'
-		});;
+		}).state('forgot',{
+			url:'/forgot',
+			controller:'forgot',
+			templateUrl:'views/forgot.html'
+		});
 		$urlRouterProvider.when('','/login').otherwise('/error')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
 		

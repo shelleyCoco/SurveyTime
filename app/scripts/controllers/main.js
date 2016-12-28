@@ -70,6 +70,10 @@ angular.module('surveyTimeApp')
 //  		console.log(e)
 			$scope.ab=false;
     		$scope.json.splice(index,1)
+    		if($scope.json.length == 0){
+				$scope.noList = true
+				return
+			}
     	},function(){})
     };
     
@@ -107,7 +111,7 @@ angular.module('surveyTimeApp')
 		    	$(document).scroll(function(){
 		    		//window.scrollTo(0,200)
 		    		//console.log($(document).scrollTop())
-		    		if($(document).scrollTop()>100){
+		    		if($(document).scrollTop()>90){
 		    			e.find('.cdsss').css({'position':'fixed','top':'3.2rem'})
 		    		}else{
 		    			e.find('.cdsss').css({'position':'','top':''})

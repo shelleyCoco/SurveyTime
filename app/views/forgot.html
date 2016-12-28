@@ -1,0 +1,29 @@
+<div class="forgot_box">
+	<div class="forgot_log">
+		<div class="forgot_logpic">
+			<img src="images/headerpic.gif" alt="" />
+		</div>
+		<h1>SURVEY TIME</h1>
+		<p>MODIFY PASSWORD</p>
+	</div>
+	<div class="forgot_uspa">
+		<div class="forgot_user">
+			<div class="glyphicon glyphicon-user forgot_user_logo"></div>
+			<input type="text" placeholder="UserName" ng-model="modusername" />
+		</div>
+		<div class="forgot_user">
+			<div class="glyphicon glyphicon-exclamation-sign forgot_user_logo"></div>
+			<input type="password" placeholder="Old PassWord"  ng-model="modpassword" onpaste="return false"/>
+		</div>
+		<div class="forgot_user">
+			<div class="glyphicon glyphicon-exclamation-sign forgot_user_logo"></div>
+			<input type="password" placeholder="New Password" ng-model="modconfirm" onpaste="return false"/>
+		</div>
+		<div class="forgot_submit">
+			<a href="javascript:;" class="forgot_submit_log" ng-click='clickConfirm()'>CONFIRM</a>
+			<p></p>
+			<a  class="forgot_submit_regist" ui-sref="login">LOGIN</a>
+		</div>
+	</div>
+	<hint></hint>
+</div>
