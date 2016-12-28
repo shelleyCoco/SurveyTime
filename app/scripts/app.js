@@ -50,6 +50,9 @@ angular
 			url:'/surveyPage/:id',
 			controller:'surveyPage',
 			templateUrl:'views/surveyPage.html'
+		}).state('submit',{
+			url:'/submit',
+			templateUrl:'views/submit.html'
 		}).state('forgot',{
 			url:'/forgot',
 			controller:'forgot',
