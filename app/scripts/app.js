@@ -92,3 +92,4 @@ angular
 		template:'<div ng-show="hintB" class="hintBox">{{hintTitle}}</div>'
 	}
 })
+

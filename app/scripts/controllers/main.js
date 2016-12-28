@@ -136,7 +136,27 @@ angular.module('surveyTimeApp')
 			}
 		}
 	})
-
+.directive('share',function(){
+	return {
+		restrict:'CAME',
+		scope:false,
+		replace:false,
+		template:'<div class="shan_bg" ng-if="ab"><div class="shan_que"><p>{{d_ul}}</p><p><span id="k_quxiao" ng-click="qx()">取消</span></p></div></div>',
+		link:function(scope,ele,attrs){
+			scope.ab=false;
+			scope.share=function(){
+				scope.ab=true;
+			}
+			scope.qx=function(){
+					scope.ab=false;
+				}
+			scope.ul=location.href;
+			scope.x_ul=scope.ul.substring(0,scope.ul.length-3);
+			scope.d_ul=scope.x_ul+"surveyPage/"+scope.json[attrs.dd].id;
+			console.log(attrs.dd);
+		}
+	}
+})
 
 
 
