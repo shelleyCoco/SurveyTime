@@ -27,7 +27,11 @@
 					<div class="neir" ng-repeat="item in wcledata3">
 						
 						<h3>{{$index+1}}.(简答){{item.title}}?</h3>
-				    	<textarea style="border:0.1rem #ccc solid;"></textarea>
+				    	 <div ng-controller="OptCtrl">
+    <div class="example">
+      <summernote config="options"></summernote>
+    </div>
+  </div>
 					</div>
 			    	
 		     </div>
