@@ -1,30 +1,30 @@
-<div ng-controller="surveyPage">
+<div >
 	<div class="server_box">
 		<div class="surveypage_bg">
 			<h1>{{updata.title}}</h1>
 			<div class="wjdc_bg">
 				<div>
-					<div class="neir"  ng-repeat=" item in wcledata1">
+					<div class="neir neir1"  ng-repeat=" item in wcledata1">
 						<h2>{{item.title}}(单选)?</h2>
 						<div ng-repeat=" x in item.opt">
-							<input type="radio" name="{{item.token}}"  id="checkboxFourInputr{{$index}}" />
-							<label for="checkboxFourInputr{{$index}}">{{x.op}}</label>
+							<input type="radio" name="{{item.token}}"  id="{{item.token+$index}}" class="danx" ng-click="cdsfuzhi($parent.$index,$index)"/>
+							<label for="{{item.token+$index}}">{{x.op}}</label>
 						</div>
 					</div>
-					<div class="neir" ng-repeat=" item in wcledata2"> 
+					<div class="neir  neir2" ng-repeat=" item in wcledata2"> 
 						<h2>{{item.title}}.多选?</h2>
-				    	<div ng-repeat="x in item.opt">
-							<input type="checkbox" name=""  id="checkboxFourInputc{{$index}}" />
-							<label for="checkboxFourInputc{{$index}}">{{x.op}}</label>
+				    	<div ng-repeat="x in item.opt" >
+							<input type="checkbox" name=""  id="{{item.token+$index}}" ng-click="ffn($parent.$index,$index)"/>
+							<label for="{{item.token+$index}}">{{x.op}}</label>
 						</div>
 					</div>
-					<div class="neir"  ng-repeat="item in wcledata0">
+					<div class="neir  neir3"  ng-repeat="item in wcledata0">
 						<h2>{{item.title}}.填空?</h2>
-				    	<input style="border:0.1rem #F5F5F5 solid;" type="text"  />
+				    	<input style="border:0.1rem #F5F5F5 solid;" type="text" ng-model="wcledata0[$index].oop"  />
 					</div>
-					<div class="neir" ng-repeat="item in wcledata3">
-						<h2>1{{item.title}}.简答?</h2>
-				    	<textarea></textarea>
+					<div class="neir  neir4" ng-repeat="item in wcledata3">
+						<h2>{{item.title}}.简答?</h2>
+				    	<textarea ng-model="wcledata3[$index].oop"></textarea>
 					</div>
 			    	
 		     </div>
