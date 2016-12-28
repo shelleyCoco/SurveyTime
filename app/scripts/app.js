@@ -50,7 +50,11 @@ angular
 			url:'/surveyPage/:id',
 			controller:'surveyPage',
 			templateUrl:'views/surveyPage.html'
-		});
+		}).state('submit',{
+			url:'/submit',
+//			controller:'submit',
+			templateUrl:'views/submit.html'
+		});;
 		$urlRouterProvider.when('','/login').otherwise('/error')
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
 		
