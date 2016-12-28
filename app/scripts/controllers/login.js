@@ -27,17 +27,17 @@ angular
 		}
 
 		$scope.validateCode = function(){
-			var inputCode = document.getElementById("inputCode").value;
-			if(inputCode.length <= 0) {
+			if($scope.loginpic <= 0) {
 				$scope.hintTitle = '请输入验证码';
 				$scope.hintB = true;
 				timeout(function(){
 					$scope.hintB = false;
 				},1000)
 				return false;
-			} else if(inputCode.toUpperCase() != code.toUpperCase()) {
+			} else if($scope.loginpic.toUpperCase() != code.toUpperCase()) {
 				$scope.hintTitle = '验证码输入有误';
 				$scope.createCode();
+				$scope.loginpic = '';
 				$scope.hintB = true;
 				timeout(function(){
 					$scope.hintB = false;
@@ -68,7 +68,7 @@ angular
 						username: $scope.loginuser,
 						password: $scope.loginpass
 					},
-					dataType: 'json',
+					dataType: 'json'
 				}).then(function(e) {
 					console.log(e)
 					if(status = '200'){

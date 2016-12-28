@@ -33,11 +33,16 @@ input.ng-invalid{
 	border: 1px solid #fff;
 }
 .yky_bg{
-	background: url(../images/background.jpg) no-repeat bottom center;
+	background: url(../images/log_bg.gif) no-repeat bottom center fixed;
+	background-size: cover;
 	min-height: 100vh;
 	color: #fff;
+	padding-bottom: 0.6rem;
 }
-
+.yky_bg .head{
+	background: rgba(20,33,43,0.8);
+	color: #fff;
+}
 .yky_bg div{
 	background: rgba(255,255,255,0);
 }
@@ -80,6 +85,7 @@ input.ng-invalid{
 	margin-left: 0.8rem;
 	line-height: 3.2rem;
 	font-size: 1rem;
+	color: #007aff;
 }
 .yky_pl{
 	padding-left: 0;
@@ -113,4 +119,47 @@ input.ng-invalid{
 .yky_btn{
 	margin-top: 10px;
 	padding: 0 1rem;
+}
+
+.yky_bg .yky_modal{
+	margin-top: 50%;
+	background-color:#fff;
+	color: rgb(20,33,43);
+}
+
+.yky_bg .shan_que{
+	height: 15%;
+	width: 70%;
+	background: #fff;
+	position: absolute;
+	top: 40%;
+	left: 15%;
+	padding: 0.4rem 0.8rem;
+	box-shadow: 0 0.01rem 0.12rem #000;
+	border-radius: 0.6rem;
+	z-index: 999;
+	color: #fff;
+}
+.yky_bg .shan_que p:nth-child(1){
+	font-size: 0.7rem;
+	padding: 0.1rem;
+	color: #333;
+	line-height: 1.5rem;
+	border-bottom: 1px solid #ccc;
+}
+.yky_bg .shan_que p:nth-child(2) span{
+	float: right;
+	font-size: 0.6rem;
+	padding: 0.3rem;
+	color: #FF5500;
+	line-height: 1rem;
+}
+.yky_bg .shan_bg{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	background: rgba(255,255,255,0);
 }

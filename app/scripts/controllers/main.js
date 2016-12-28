@@ -21,18 +21,21 @@ angular.module('surveyTimeApp')
 	  		method:'get',
 	  		params:{'uid':localStorage.uid}
 	    }).then(function(e){
-			console.log(e)
-
 			$scope.json=e.data;
+			if($scope.json.length == 0){
+				$scope.noList = true
+				return
+			}
 			for(var i=0;i<$scope.json.length;i++){
 				$scope.json[i].checked=false;
 			}
 	    },function(e){
 	    	
 	    });
-    }
+    };
     $scope.gg();
     $scope.cdstc=function(){
+    	localStorage.clear()
     	$state.go('login')
     }
     $scope.cdsqx=function(){
@@ -42,19 +45,35 @@ angular.module('surveyTimeApp')
     	$scope.cdschulai=false;
     	$scope.isshow=!$scope.isshow;
     }
+	if(!(localStorage.uid)){
+//		$scope.hintTitle = '您还没有登陆，请<a ui-serf="/login">登录</a>';
+//		$scope.hintB = true
+		return
+	}
     $scope.cdsxinzeng=function(){
     	$state.go('create')
     }
+    $scope.shanchu=function(a){
+    	$scope.aa=a;
+    	$scope.ab=true;
+    }
     $scope.delete=function(index){
 //  	console.log($scope.json[index].id)
+		console.log(index)
     	var id=$scope.json[index].id
+        
     	$http({
     		url:url+'/item/'+id,
     		method:'delete',
 
     	}).then(function(e){
 //  		console.log(e)
+			$scope.ab=false;
     		$scope.json.splice(index,1)
+    		if($scope.json.length == 0){
+				$scope.noList = true
+				return
+			}
     	},function(){})
     };
     
@@ -92,7 +111,7 @@ angular.module('surveyTimeApp')
 		    	$(document).scroll(function(){
 		    		//window.scrollTo(0,200)
 		    		//console.log($(document).scrollTop())
-		    		if($(document).scrollTop()>100){
+		    		if($(document).scrollTop()>90){
 		    			e.find('.cdsss').css({'position':'fixed','top':'3.2rem'})
 		    		}else{
 		    			e.find('.cdsss').css({'position':'','top':''})
@@ -102,6 +121,21 @@ angular.module('surveyTimeApp')
 		}
     
   }])
+  .directive("dele",function(){
+		return {
+			restrict:"ECMA",
+			template:'<div class="shan_bg" ng-if="ab"><div class="shan_que"><p>确认删除？</p><p><span id="k_quxiao" ng-click="qx()">取消</span><span id="k_shanchu" ng-click="delete(aa)">删除</span></p></div></div>',
+			transclude:true,
+			replace:false,
+			scope:false,
+			link:function(scope,ele,attrs){
+				scope.ab=false;
+				scope.qx=function(){
+					scope.ab=false;
+				}
+			}
+		}
+	})
 
 
 

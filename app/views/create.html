@@ -1,7 +1,7 @@
-<div ng-controller="create" class="yky_bg">
+<div class="yky_bg">
 	<form name="mywj">
-	<div class="cdsdada">
-     <div class="glyphicon glyphicon-circle-arrow-left yky_cancel" ng-click="cancel()"></div>
+	<div class="cdsdada head">
+     <div class="glyphicon glyphicon-chevron-left yky_cancel" ng-click="cancel()"></div>
      <i>SurveyTime</i>
     </div>
     	<div class="form-group yky_phead">
@@ -13,8 +13,8 @@
     	</div>
     		<div style="color:#999" class="btn-block yky_add" ng-click="add()">增加问题</div>
     		<div class="yky_btn">
-    		<button type="button" class="btn btn-primary btn-block" ng-click="sub()" ng-disabled="mywj.$invalid">Submit</button>
+    		<button type="button" class="btn btn-primary btn-block yky_mb" ng-click="sub()" ng-disabled="mywj.$invalid">Submit</button>
     		</div>
     	</form>
-    	<hint></hint>
+    	<hint></hint> 
     </div>

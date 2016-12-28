@@ -65,6 +65,7 @@ angular.module("surveyTimeApp")
           //console.log($scope.wcledata2)
       }
       
+
    }
    /*提交*/
    $scope.Fn=function(){
