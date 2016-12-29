@@ -5,7 +5,6 @@
 	<hint></hint>
 		<div class="surveypage_bg">
 		<div class="surveypage_bg2"></div>
-			
 			<div class="title_head">
 				<h1>{{updata.title}}</h1>
 			</div>
@@ -13,7 +12,6 @@
 				<div>
 					<div class="neir"  ng-repeat=" item in wcledata1">
 						<h3>{{$index+1+ind0+'.　'+item.title}}　(单选)</h3>
-
 						<div ng-repeat=" x in item.opt" class="page_radio">
 							<input type="radio" name="{{item.token}}" id="{{item.token+$index}}" ng-click="cdsfuzhi($parent.$index,$index)" />
 							<label for="{{item.token+$index}}">{{x.op}}</label>
@@ -35,16 +33,12 @@
 						<div ng-controller="OptCtrl">
 							<div class="example">
 								<summernote config="options" ng-model="wcledata3[$index].oop"></summernote>
-
 							</div>
 						</div>
 					</div>
-
 				</div>
 				<button style="bottom:10%;position:relative;" class="btn btn-primary page_btn" ng-click="Fn()">提交</button>
 			</div>
 		</div>
-
 	</div>
-
 </div>

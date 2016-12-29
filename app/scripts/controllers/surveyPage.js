@@ -67,8 +67,6 @@ angular.module("surveyTimeApp")
       $scope.ind1=$scope.wcledata1.length
       $scope.ind2=$scope.wcledata1.length+$scope.wcledata2.length;
       $scope.ind3=$scope.wcledata2.length+$scope.wcledata1.length+$scope.wcledata0.length
-      
-
    },function(){})
    $scope.ssss='';
    /*单选*/
