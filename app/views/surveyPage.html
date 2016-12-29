@@ -1,6 +1,4 @@
-
 <div>
-
 	<div class="server_box">
 	<hint></hint>
 		<div class="surveypage_bg">
@@ -11,7 +9,7 @@
 			<div class="wjdc_bg">
 				<div>
 					<div class="neir"  ng-repeat=" item in wcledata1">
-						<h3>{{$index+ind0+'.　'+item.title}}　(单选)</h3>
+						<h3>{{$index+ind0+'. '+item.title}} (单选)</h3>
 						<div ng-repeat=" x in item.opt" class="page_radio">
 							<label for="checkboxFourInputr{{$index}}" class='demo--label'>
 								<input type="radio" name="{{item.token}}"  id="checkboxFourInputr{{$index}}" class="demo--radio" type="radio"/>
@@ -21,7 +19,7 @@
 						</div>
 					</div>
 					<div class="neir" ng-repeat=" item in wcledata2">
-						<h3>{{$index+1}}.(多选){{item.title}}?</h3>
+						<h3>{{$index+1+'. '+item.title}} (多选)</h3>
 				    	<div ng-repeat="x in item.opt" class="page_radio">
 							<label for="checkboxFourInputc{{$index}}" class="demo--label">
 							<input type="checkbox" name="" class="demo--radio" id="checkboxFourInputc{{$index}}" />
@@ -29,11 +27,11 @@
 						</div>
 					</div>
 					<div class="neir pack"  ng-repeat="item in wcledata0">
-						<h3>{{$index+1}}.(填空){{item.title}}?</h3>
+						<h3>{{$index+1+'. '+item.title}} (填空)</h3>
 				    	<input type="text"  />
 					</div>
 					<div class="neir answer" ng-repeat="item in wcledata3">
-						<h3>{{$index+1}}.(简答){{item.title}}?</h3>
+						<h3>{{$index+1+'. '+item.title}} (简答)</h3>
 				    	<div ng-controller="OptCtrl">
 							<div class="example">
 								<summernote config="options"></summernote>
