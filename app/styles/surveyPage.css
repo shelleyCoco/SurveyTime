@@ -75,3 +75,16 @@
 	margin: 0.3rem 0;
 	margin-left: 0.2rem;
 }
+.server_box .hintBox{
+	width: 10rem;
+	height: 3rem;
+	position: fixed;
+	top: 46%;
+	left: 50%;
+	margin-left: -5rem;
+	background: rgba(205,205,205,.8);
+	color: #fff;
+	text-align: center;
+	line-height: 3rem;
+	border-radius: .25rem;
+}

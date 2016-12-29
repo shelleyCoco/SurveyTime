@@ -137,7 +137,7 @@
 .hintBox{
 	width: 10rem;
 	height: 3rem;
-	position: absolute;
+	position: fixed;
 	top: 46%;
 	left: 50%;
 	margin-left: -5rem;

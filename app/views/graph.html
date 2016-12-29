@@ -7,9 +7,23 @@
 	<div class="panel panel-default" ng-repeat='m in listArr'>
 		<div class="panel-heading titleBg">{{$index+1}}.{{m.title}}</div>
 		<div class="panel-body graph-panel">
-			<p ng-show='noNum'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
+			<p class="graph-panel_p" ng-show='noNum'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
 			<canvas ng-hide='noNum' id="doughnut" class="chart chart-doughnut" chart-data="mesg.arr2[$index]" chart-labels="mesg.arr[$index]">
 </canvas>
+		</div>
+	</div>
+	<div class="panel panel-default" ng-repeat='m in fillText'>
+		<div class="panel-heading titleBg">{{$index+1}}.{{m.title}}  (填空)</div>
+		<div class="panel-body graph-panel">
+			<p ng-show='noNumText'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
+			<p ng-hide = 'noNumText'>{{listText.data[$index]}}</p>
+		</div>
+	</div>
+	<div class="panel panel-default" ng-repeat='m in fillTextarea'>
+		<div class="panel-heading titleBg">{{$index+1}}.{{m.title}}  (简答)</div>
+		<div class="panel-body graph-panel">
+			<p ng-show='noNumTextarea'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
+			<p ng-hide = 'noNumText' ng-bind-html='{{listTextarea.data[$index]}}'></p>
 		</div>
 	</div>
 	<div class='noList' ng-show='noList'>

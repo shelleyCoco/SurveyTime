@@ -61,9 +61,19 @@ angular.module("surveyTimeApp")
 		var result = [];
 		var index = $stateParams.index
 		var listArr = [];
+		var fillText = []
+		var fillTextarea = []
+		$scope.fillText = []
+		$scope.fillTextarea = []
 		$scope.listArr = [];
 		$scope.list = {
 			labels: [],
+			data: []
+		}
+		$scope.listText = {
+			data: []
+		}
+		$scope.listTextarea = {
 			data: []
 		}
 		var total = 0
@@ -77,14 +87,19 @@ angular.module("surveyTimeApp")
 			for(var y = 0; y < $scope.json.option.length; y++) {
 				if($scope.json.option[y].type == 2 || $scope.json.option[y].type == 1) {
 					listArr.push($scope.json.option[y])
-					
+				}else if($scope.json.option[y].type == 0){
+					fillText.push($scope.json.option[y])
+				}else if($scope.json.option[y].type == 3){
+					fillTextarea.push($scope.json.option[y])
 				}
 			}
 			$scope.listArr = listArr
-			if(listArr.length == 0){
-					$scope.noList = true
-					return
-				}
+			$scope.fillText = fillText
+			$scope.fillTextarea = fillTextarea
+//			if(listArr.length == 0){
+//					$scope.noList = true
+//					return
+//				}
 			for(var i = 0; i < listArr.length; i++) {
 				for(var x = 0; x < listArr[i].opt.length; x++) {
 					$scope.list.labels.push(listArr[i].opt[x].op)
@@ -96,10 +111,10 @@ angular.module("surveyTimeApp")
 					total += $scope.list.data[w];
 					
 				}
-					console.log(total)
+//					console.log(total)
 				if(total == 0){
 					$scope.noNum = true;
-					return;
+					break;
 				}else{
 					$scope.noNum = false;
 				}
@@ -108,8 +123,41 @@ angular.module("surveyTimeApp")
 				$scope.list.labels = [];
 				$scope.list.data = [];
 			}
-
-			//			console.log($scope.mesg.arr2)
+			console.log($scope.fillText)
+			for(var i = 0; i < $scope.fillText.length; i++) {
+				if($scope.fillText[i].oop == ''){
+					$scope.noNumText = true
+				}
+					$scope.listText.data.push( $scope.fillText[i].oop)
+				console.log($scope.listText.data)
+//				if(total == 0){
+//					$scope.noNum = true;
+//					return;
+//				}else{
+//					$scope.noNum = false;
+//				}
+//				$scope.mesg.arr.push($scope.list.labels)
+//				$scope.mesg.arr2.push($scope.list.data)
+//				$scope.list.labels = [];
+//				$scope.list.data = [];
+			}
+			for(var i = 0; i < $scope.fillTextarea.length; i++) {
+				if($scope.fillTextarea[i].oop == ''){
+					$scope.noNumTextarea= true
+				}
+					$scope.listTextarea.data.push( $scope.fillTextarea[i].oop)
+//				console.log($scope.listText.data)
+//				if(total == 0){
+//					$scope.noNum = true;
+//					return;
+//				}else{
+//					$scope.noNum = false;
+//				}
+//				$scope.mesg.arr.push($scope.list.labels)
+//				$scope.mesg.arr2.push($scope.list.data)
+//				$scope.list.labels = [];
+//				$scope.list.data = [];
+			}
 		})
 		
 
