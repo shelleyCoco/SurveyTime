@@ -25,9 +25,13 @@
 				    	<input style="border:0.1rem #ccc solid;" type="text"  ng-model="wcledata0[$index].oop"/>
 					</div>
 					<div class="neir" ng-repeat="item in wcledata3">
-						
+
 						<h3>{{$index+ind3+'.　'+item.title}}　(简答)</h3>
-				    	<textarea style="border:0.1rem #ccc solid;" ng-model="wcledata3[$index].oop"></textarea>
+						<div ng-controller="OptCtrl">
+							<div class="example">
+								<summernote config="options" ng-model="wcledata3[$index].oop"></summernote>
+							</div>
+						</div>
 					</div>
 			    	
 		     </div>
