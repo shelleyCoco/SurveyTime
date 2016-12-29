@@ -63,7 +63,7 @@
 }
 .forgot_user input{
 	border: none;
-	border-bottom: 0.025rem solid #8f9499;
+	border-bottom: 1px solid #8f9499;
 	height: 1.25rem;
 	width: 100%;
 	margin-left: 0.5rem;

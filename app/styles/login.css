@@ -5,9 +5,9 @@
 	/*height: auto;*/
 	height: 100%;
 	overflow: hidden;
-	background: url(../images/log_bg.gif) no-repeat center center fixed;
+	background: url(../images/log_bg.gif) no-repeat center center;
 	background-size: cover;
-	position: relative;
+	/*position: relative;*/
 }
 /*logo*/
 .log_log{
@@ -63,7 +63,7 @@
 }
 .log_user input{
 	border: none;
-	border-bottom: 0.025rem solid #8f9499;
+	border-bottom: 1px solid #8f9499;
 	height: 1.25rem;
 	width: 100%;
 	margin-left: 0.5rem;
@@ -97,7 +97,8 @@
 .log_submit_forgot{
 	height: 2.25rem;
 	line-height: 2.25rem;
-	font-size: 0.4rem;
+	font-size: 0.475rem;
+	font-weight: bold;
 	color: #fcfcfc;
 	margin-bottom: 0;
 	display: block;

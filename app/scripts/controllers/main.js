@@ -84,6 +84,11 @@ angular.module('surveyTimeApp')
     
     $scope.cdsAll=function(){
     	$scope.isshow=!$scope.isshow;
+    	if($scope.isshow){
+
+    	}else{
+
+    	}
     	$scope.cdschulai=true;
 
     };
@@ -113,7 +118,7 @@ angular.module('surveyTimeApp')
 		        <form class="navbar-form navbar-left ng-pristine ng-valid mei" role="search"><div class="form-group"><input type="text" class="form-control" placeholder="Search" ng-model="sea"></div></form>\
 		    </div></div>',
 		    link:function(s,e,a){
-		    	$(document).scroll(function(){
+		    	/*$(document).scroll(function(){
 		    		//window.scrollTo(0,200)
 		    		//console.log($(document).scrollTop())
 		    		if($(document).scrollTop()>90){
@@ -121,7 +126,7 @@ angular.module('surveyTimeApp')
 		    		}else{
 		    			e.find('.cdsss').css({'position':'','top':''})
 		    		}
-		    	})
+		    	})*/
 		    }
 		}
     
@@ -141,6 +146,36 @@ angular.module('surveyTimeApp')
 			}
 		}
 	})
+.filter('cdssub',[function(){
+	return function(str){
+		if(str.length>14){
+			return str.substr(0,14)+'...'
+		}else{
+			return str
+		}
+		
+	}
+}])
+.directive('share',function(){
+	return {
+		restrict:'CAME',
+		scope:false,
+		replace:false,
+		template:'<div class="shan_bg" ng-if="ab"><div class="shan_que"><p>{{d_ul}}</p><p><span id="k_quxiao" ng-click="qx()">取消</span></p></div></div>',
+		link:function(scope,ele,attrs){
+			scope.ab=false;
+			scope.share=function(){
+				scope.ab=true;
+			}
+			scope.qx=function(){
+					scope.ab=false;
+				}
+			scope.ul=location.href;
+			scope.x_ul=scope.ul.substring(0,scope.ul.length-3);
+			scope.d_ul=scope.x_ul+"surveyPage/"+scope.json[attrs.dd].id;
+		}
+	}
+})
 
 
 

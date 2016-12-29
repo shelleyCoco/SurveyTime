@@ -11,6 +11,7 @@
 			$state.go("cds");
 		}
 		$scope.sub=function(){
+			$scope.mywj.$invalid=true;
 			var b=true;
 			if($scope.updata.option.length==0){
 				b=false;
