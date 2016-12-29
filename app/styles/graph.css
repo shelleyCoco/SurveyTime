@@ -29,6 +29,6 @@
 .container .panel-default > .titleBg{
 	background: #fff;
 }
-.panel-body p{
+.graph-panel>p{
 	text-align: center;
 }

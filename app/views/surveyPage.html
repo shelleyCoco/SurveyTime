@@ -1,4 +1,5 @@
-<div >
+
+<div>
 
 	<div class="server_box">
 	<hint></hint>
@@ -10,33 +11,38 @@
 				<div>
 					<div class="neir"  ng-repeat=" item in wcledata1">
 						<h2>{{$index+ind0+'.　'+item.title}}　(单选)</h2>
+
 						<div ng-repeat=" x in item.opt" class="page_radio">
-							<input type="radio" name="{{item.token}}"  id="{{item.token+$index}}" ng-click="cdsfuzhi($parent.$index,$index)"/>
+							<input type="radio" name="{{item.token}}" id="{{item.token+$index}}" ng-click="cdsfuzhi($parent.$index,$index)" />
 							<label for="{{item.token+$index}}">{{x.op}}</label>
 						</div>
 					</div>
-					<div class="neir" ng-repeat=" item in wcledata2"> 
-						<h3>{{$index+ind1+'.　'+item.title}}　(多选)</h3>
-				    	<div ng-repeat="x in item.opt">
-							<input type="checkbox" name=""  id="{{item.token+$index}}" ng-click="ffn($parent.$index,$index)"/>
+					<div class="neir" ng-repeat=" item in wcledata2">
+						<h3>{{$index+1}}.(多选){{item.title}}?</h3>
+						<div ng-repeat="x in item.opt">
+							<input type="checkbox" name="" id="{{item.token+$index}}" ng-click="ffn($parent.$index,$index)" />
 							<label for="{{item.token+$index}}">{{x.op}}</label>
 						</div>
 					</div>
-					<div class="neir"  ng-repeat="item in wcledata0">
-						<h3>{{$index+ind2+'.　'+item.title}}　(填空)</h3>
-				    	<input style="border:0.1rem #ccc solid;" type="text"  ng-model="wcledata0[$index].oop"/>
+					<div class="neir" ng-repeat="item in wcledata0">
+						<h3>{{$index+1}}.(填空){{item.title}}?</h3>
+						<input style="border:0.1rem #ccc solid;" type="text" ng-model="wcledata0[$index].oop" />
 					</div>
 					<div class="neir" ng-repeat="item in wcledata3">
-						
-						<h3>{{$index+ind3+'.　'+item.title}}　(简答)</h3>
-				    	<textarea style="border:0.1rem #ccc solid;" ng-model="wcledata3[$index].oop"></textarea>
+
+						<h3>{{$index+1}}.(简答){{item.title}}?</h3>
+						<div ng-controller="OptCtrl">
+							<div class="example">
+								<summernote config="options"></summernote>
+							</div>
+						</div>
 					</div>
-			    	
-		     </div>
-	     <button style="bottom:10%;position:relative;" class="btn btn-primary page_btn" ng-click="Fn()">提交</button>
+
+				</div>
+				<button style="bottom:10%;position:relative;" class="btn btn-primary page_btn" ng-click="Fn()">提交</button>
+			</div>
 		</div>
-		</div>
-	    
+
 	</div>
-	
+
 </div>
