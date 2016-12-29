@@ -1,0 +1,59 @@
+.submit_box{
+	width: 16rem;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.submit_bg{
+	width:16rem;
+	height:100%;
+	overflow: hidden;
+}
+.submit_fixed{
+	width: 100%;
+	min-height: 100vh;
+	background: url(../images/wjbj.jpg) no-repeat center center;
+	background-size:cover;
+	position: fixed;
+	z-index: -1;
+}
+.yemian_bg{
+	width: 14rem;
+	height:26.4rem;
+	margin: 0 auto;
+	border-width: 0.625rem;
+	border-style: solid;
+	border-image: url(../images/wjdc.png) 25 fill repeat;
+	margin-top: 3.75rem;
+	margin-bottom: 2rem;
+}
+.yemian_bg img{
+	width:12.2rem;
+	height:7.9rem;
+	margin-left:0.4rem;
+	margin-top:5rem;
+}
+.yemian_bg p{
+	-width: 11rem;
+    text-align: center;
+	line-height:3rem;
+	font-size:0.8rem;
+	letter-spacing: 0.03rem;
+}
+.submit_foot{
+	width:11.5rem;
+	height:auto;
+	border-top:0.05rem solid #000;
+	margin:0 auto;
+}
+.submit_foot img{
+	width:11.5rem;
+	height:2.05rem;
+	margin-top:2.5rem;
+	margin-left:0rem;
+	
+}
+/*.submit_footer{
+	width: 16rem;
+	height:3rem;
+}*/

@@ -80,14 +80,6 @@
 .checkboxFour input[type=checkbox]:checked + label {
 	background: #26ca28;
 }
-
-
-
-
-
-
-
-
-
-
-
+.hintBackG{
+	background: #fff;
+}
