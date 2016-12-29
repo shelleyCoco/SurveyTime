@@ -8,7 +8,6 @@
 .surveypage_bg {
 	width: 16rem;
 	height: auto;
-	background-size: cover;
 	overflow: hidden;
 }
 
@@ -17,6 +16,7 @@
 	min-height: 100vh;
 	background: url(../images/log_bg.gif) no-repeat center center;
 	position: fixed;
+	background-size: cover;
 	z-index: -2;
 	top: 0;
 	left: 0;
@@ -141,11 +141,11 @@
 	border: 1px solid #999;
 	border-radius: 100%;
 	display: inline-block;
-	height: 0.4rem;
+	height: 0.6rem;
 	margin-right: 0.25rem;
 	margin-top: -0.025rem;
 	vertical-align: middle;
-	width: 0.4rem;
+	width: 0.6rem;
 	line-height: 0.025rem;
 }
 
@@ -154,10 +154,10 @@
 	border-radius: 100%;
 	content: "";
 	display: inline-block;
-	height: 0.4rem;
+	height: 0.6rem;
 	margin: -0.025rem;
-	width: 0.4rem;
-	border: 0.1rem solid #337ab7;
+	width: 0.6rem;
+	border: 0.15rem solid #337ab7;
 }
 
 .demo--checkbox.demo--radioInput,

@@ -4,6 +4,7 @@ angular
 		$scope.modusername = '';
 		$scope.modpassword = '';
 		$scope.modconfirm = '';
+		var mm = /^[a-zA-Z\d_]{6,}$/;
 		$scope.clickConfirm = function() {
 			$http({
 				url: url+"users/login",
@@ -23,14 +24,28 @@ angular
 						'password':$scope.modconfirm
 					}
 				}).then(function(e){
-					$scope.hintTitle='修改成功！'
-					$scope.hintB = true;
-	               	$timeout(function(){
-						$scope.hintB = false;
-					},1000)
-	               	$timeout(function(){
-						$state.go('login')
-					},1300)
+					if($scope.modconfirm ==''){
+						$scope.hintTitle='重置密码不能为空';
+						$scope.hintB = true;
+		               	$timeout(function(){
+							$scope.hintB = false;
+						},1000)
+					}else if(!(mm.test($scope.modconfirm))) {
+	                    $scope.hintTitle='密码长度在6位以上，请重新输入';
+		                    $scope.hintB = true;
+							$timeout(function(){
+							$scope.hintB = false;
+						},1000)
+					}else{
+						$scope.hintTitle='修改成功！'
+						$scope.hintB = true;
+		               	$timeout(function(){
+							$scope.hintB = false;
+						},1000)
+		               	$timeout(function(){
+							$state.go('login')
+						},1300)
+					}
 				},function(){
 					
 				})
