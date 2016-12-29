@@ -9,12 +9,13 @@
  */
 
 angular.module('surveyTimeApp')
-  .controller('cdsController', ['$scope','$http','$state',function ($scope,$http,$state){
+  .controller('cdsController', ['$scope','$http','$state','$timeout',function ($scope,$http,$state,$timeout){
   	$scope.isshow=true;
   	$scope.cdschulai=false;
   	$scope.json=[];
   	$scope.cdsff='';
   	var url='http://47.90.20.200:1602';
+  	if(localStorage.uid)
     $scope.gg=function(){
     	$http({
 	    	url:url+'/item/',
@@ -33,7 +34,6 @@ angular.module('surveyTimeApp')
 	    	
 	    });
     };
-    $scope.gg();
     $scope.cdstc=function(){
     	localStorage.clear()
     	$state.go('login')
@@ -46,13 +46,18 @@ angular.module('surveyTimeApp')
     	$scope.isshow=!$scope.isshow;
     }
 	if(!(localStorage.uid)){
-//		$scope.hintTitle = '您还没有登陆，请<a ui-serf="/login">登录</a>';
-//		$scope.hintB = true
+		$scope.hintTitle = '您还没有登陆';
+		$scope.hintB = true
+		$timeout(function(){
+			$scope.hintB = false;
+			$state.go('login')
+		},1000)
 		return
 	}
     $scope.cdsxinzeng=function(){
     	$state.go('create')
     }
+    $scope.gg();
     $scope.shanchu=function(a){
     	$scope.aa=a;
     	$scope.ab=true;
