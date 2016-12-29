@@ -12,8 +12,8 @@
 					<div class="neir"  ng-repeat=" item in wcledata1">
 						<h3>{{$index+1+ind0+'. '+item.title}} (单选)</h3>
 						<div ng-repeat=" x in item.opt" class="page_radio">
-							<label for="checkboxFourInputr{{$index}}" class='demo--label'>
-								<input type="radio" name="{{item.token}}"  id="checkboxFourInputr{{$index}}" class="demo--radio" type="radio"/>
+							<label for="{{item.token+$index}}" class='demo--label'>
+								<input type="radio" name="{{item.token}}"  id="{{item.token+$index}}" class="demo--radio" type="radio"/>
 								<div class=" demo--radioInput"></div>
 								{{x.op}}
 							</label>
@@ -22,8 +22,8 @@
 					<div class="neir" ng-repeat=" item in wcledata2">
 						<h3>{{$index+1+ind1+'. '+item.title}} (多选)</h3>
 				    	<div ng-repeat="x in item.opt" class="page_radio">
-							<label for="checkboxFourInputc{{$index}}" class="demo--label">
-							<input type="checkbox" name="" class="demo--radio" id="checkboxFourInputc{{$index}}" />
+							<label for="{{item.token+$index}}" class="demo--label">
+							<input type="checkbox" name="" class="demo--radio" id="{{item.token+$index}}" />
 							<span class="demo--checkbox demo--radioInput"></span>{{x.op}}</label>
 						</div>
 					</div>
