@@ -8,15 +8,15 @@
  *
  * Main module of the application.
  */
-window.onload = function(){
-	document.documentElement.style.fontSize  = innerWidth/16 + 'px';
-	window.onresize = function(){
-		document.documentElement.style.fontSize  = innerWidth/16 + 'px';
+$(function() {
+	document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + 'px';
+	window.onresize = function() {
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + 'px';
 	}
-}
+})
 
 angular
-  .module('surveyTimeApp', ['ui.router',"chart.js",'summernote'])
+  .module('surveyTimeApp', ['ui.router',"chart.js",'summernote','ngSanitize'])
   .constant('url','http://47.90.20.200:1602/')
   .controller('ctrl',['$scope',function($scope){
 		$scope.hintTitle = '';
