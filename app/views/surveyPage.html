@@ -10,7 +10,7 @@
 			<div class="wjdc_bg">
 				<div>
 					<div class="neir"  ng-repeat=" item in wcledata1">
-						<h2>{{$index+ind0+'.　'+item.title}}　(单选)</h2>
+						<h2>{{$index+1+ind0+'.　'+item.title}}　(单选)</h2>
 
 						<div ng-repeat=" x in item.opt" class="page_radio">
 							<input type="radio" name="{{item.token}}" id="{{item.token+$index}}" ng-click="cdsfuzhi($parent.$index,$index)" />
@@ -18,18 +18,18 @@
 						</div>
 					</div>
 					<div class="neir" ng-repeat=" item in wcledata2">
-						<h3>{{$index+ind1+'.　'+item.title}}　(多选)</h3>
+						<h3>{{$index+1+ind1+'.　'+item.title}}　(多选)</h3>
 						<div ng-repeat="x in item.opt">
 							<input type="checkbox" name="" id="{{item.token+$index}}" ng-click="ffn($parent.$index,$index)" />
 							<label for="{{item.token+$index}}">{{x.op}}</label>
 						</div>
 					</div>
 					<div class="neir" ng-repeat="item in wcledata0">
-						<h3>{{$index+ind2+'.　'+item.title}}　(填空)</h3>
+						<h3>{{$index+1+ind2+'.　'+item.title}}　(填空)</h3>
 						<input style="border:0.1rem #ccc solid;" type="text" ng-model="wcledata0[$index].oop" />
 					</div>
 					<div class="neir" ng-repeat="item in wcledata3">
-						<h3>{{$index+ind3+'.　'+item.title}}　(简答)</h3>
+						<h3>{{$index+1+ind3+'.　'+item.title}}　(简答)</h3>
 						<div ng-controller="OptCtrl">
 							<div class="example">
 								<summernote config="options" ng-model="wcledata3[$index].oop"></summernote>
