@@ -6,7 +6,7 @@
 	<h1>标题：{{json.title}}</h1>
 	<div class="panel panel-default" ng-repeat='m in listArr'>
 		<div class="panel-heading titleBg">{{$index+1}}.{{m.title}}</div>
-		<div class="panel-body">
+		<div class="panel-body graph-panel">
 			<p ng-show='noNum'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
 			<canvas ng-hide='noNum' id="doughnut" class="chart chart-doughnut" chart-data="mesg.arr2[$index]" chart-labels="mesg.arr[$index]">
 </canvas>

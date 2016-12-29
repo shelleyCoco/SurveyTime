@@ -91,18 +91,22 @@ angular.module("surveyTimeApp")
 					$scope.list.data.push(listArr[i].opt[x].num)
 						//					console.log(listArr[i].opt[x].op)
 				}
-				for(var w=0;w<$scope.list.data;w++){
+				
+				for(var w=0;w<$scope.list.data.length;w++){
 					total += $scope.list.data[w];
 					
 				}
+					console.log(total)
 				if(total == 0){
 					$scope.noNum = true;
 					return;
+				}else{
+					$scope.noNum = false;
 				}
 				$scope.mesg.arr.push($scope.list.labels)
 				$scope.mesg.arr2.push($scope.list.data)
-//				$scope.list.labels = [];
-//				$scope.list.data = [];
+				$scope.list.labels = [];
+				$scope.list.data = [];
 			}
 
 			//			console.log($scope.mesg.arr2)
