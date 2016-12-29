@@ -35,7 +35,7 @@
 .cdsbottomco {font-size:1.6rem;color:#eb6371;margin-left:4.5rem;margin-top:0.2rem;}
 .cdsbottomco:active{color:#f90;}
 .cdsfenxiang span{width:1rem;height:1rem;float:left;}
-.cdsqq{width:1rem;height:1rem;background:url(../images/cdsqq.png);background-size: cover;}
+.cdsqq{width:1rem;height:1rem; font-size: 1rem;}
 .cdsvx{background:url(../images/cdsvx.png);background-size: cover;}
 .cdsfenxiang .cdsxq{width:2rem;margin-left:3rem;}
 .cdsnone{width:2rem;height:2rem;position:absolute;right: 0;top:0.75rem;background:#fff;}

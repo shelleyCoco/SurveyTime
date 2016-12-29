@@ -158,7 +158,6 @@ angular.module('surveyTimeApp')
 			scope.ul=location.href;
 			scope.x_ul=scope.ul.substring(0,scope.ul.length-3);
 			scope.d_ul=scope.x_ul+"surveyPage/"+scope.json[attrs.dd].id;
-			console.log(attrs.dd);
 		}
 	}
 })

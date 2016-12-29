@@ -11,6 +11,9 @@
 		<p class="">没有数据噢</p>
 	</div>
 	<hint></hint>
+		<div ng-if="loading">
+			<img src="../images/2.gif" style="width: 100%;"/>
+		</div>
     <ul class="cdsContent">
         <li ng-repeat="x in json |filter:sea">
             <p ui-sref="graph({index:x.id})">
@@ -18,8 +21,7 @@
             </p>
             <span class="cdsspan glyphicon glyphicon-remove" ng-click="shanchu($index)"></span>
             <div class="cdsfenxiang clearFix">
-                <span class="cdsqq" ng-click="share()"></span>
-                <span class="cdsvx"></span>
+                <span class="cdsqq glyphicon glyphicon-share" ng-click="share()"></span>
                 <span class="cdsxq" ui-sref="surveyPage({id:x.id})">详情</span>
             </div>
             <div class="cdsnone" ng-show="cdschulai"> 
@@ -46,5 +48,4 @@
             </div>
         </div>
     </div>
-
 </div>

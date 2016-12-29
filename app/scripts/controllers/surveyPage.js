@@ -14,7 +14,6 @@ angular.module("surveyTimeApp")
 
    }).then(function(e){
    	$scope.updata=e.data;
-      console.log($scope.updata)
 
       for(var i=0;i<$scope.updata.option.length;i++){
          if($scope.updata.option[i].type==0){
@@ -39,7 +38,6 @@ angular.module("surveyTimeApp")
 
       }
 
-      console.log($scope.wcledata1)
    },function(){})
    $scope.ssss='';
    /*单选*/
@@ -51,7 +49,6 @@ angular.module("surveyTimeApp")
       $scope.wcledata1[parentIndex].opt[index].check=1;
       
    }
-   console.log($scope.wcledata1)
    /*多选*/ 
    $scope.ffn=function(parentIndex,index){
       console.log($scope.wcledata2[parentIndex].opt[index].check)
@@ -106,14 +103,13 @@ angular.module("surveyTimeApp")
             delete $scope.wcledata1[i].token
          }
       }
-      console.log($scope.updata)
 
       $http({
          method:'put',
          url:serve+'/item/'+id,
          data:$scope.updata
       }).then(function(e){
-         console.log(e)
+      	
       },function(){})
    }
    
