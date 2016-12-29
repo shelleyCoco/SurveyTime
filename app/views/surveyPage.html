@@ -4,13 +4,15 @@
 	<div class="server_box">
 	<hint></hint>
 		<div class="surveypage_bg">
+		<div class="surveypage_bg2"></div>
+			
 			<div class="title_head">
 				<h1>{{updata.title}}</h1>
 			</div>
 			<div class="wjdc_bg">
 				<div>
 					<div class="neir"  ng-repeat=" item in wcledata1">
-						<h2>{{$index+1+ind0+'.　'+item.title}}　(单选)</h2>
+						<h3>{{$index+1+ind0+'.　'+item.title}}　(单选)</h3>
 
 						<div ng-repeat=" x in item.opt" class="page_radio">
 							<input type="radio" name="{{item.token}}" id="{{item.token+$index}}" ng-click="cdsfuzhi($parent.$index,$index)" />
