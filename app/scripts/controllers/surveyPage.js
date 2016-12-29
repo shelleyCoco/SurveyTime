@@ -26,11 +26,11 @@ angular.module("surveyTimeApp")
          if($scope.updata.option[i].type==0){
             $scope.wcledata0.push($scope.updata.option[i])
          }else if($scope.updata.option[i].type==1){
-            //console.log(5)
+            
             $scope.updata.option[i].token='asd'+i;
             $scope.wcledata1.push($scope.updata.option[i])
-            for(var j=0;j<$scope.wcledata1.length;j++){
-               $scope.wcledata1[j].check=-1;
+            for(var i=0;i<$scope.wcledata1.length;i++){
+               $scope.wcledata1[i].check=-1;
             }
          }else if($scope.updata.option[i].type==2){
             for(var j=0;j<$scope.updata.option[i].opt.length;j++){
@@ -68,6 +68,7 @@ angular.module("surveyTimeApp")
       $scope.ind2=$scope.wcledata1.length+$scope.wcledata2.length;
       $scope.ind3=$scope.wcledata2.length+$scope.wcledata1.length+$scope.wcledata0.length
       
+
    },function(){})
    $scope.ssss='';
    /*单选*/
@@ -192,14 +193,16 @@ angular.module("surveyTimeApp")
             delete $scope.wcledata1[i].token
          }
       }
+
       //console.log($scope.updata)
+
 
       $http({
          method:'put',
          url:serve+'/item/'+id,
          data:$scope.updata
       }).then(function(e){
-         console.log(e)
+
          $scope.wcledata0.length=0;
          $scope.wcledata1.length=0;
          $scope.wcledata2.length=0;
@@ -211,12 +214,12 @@ angular.module("surveyTimeApp")
             $state.go('submit')
          }
          
+
       },function(){})
    }
    
 	}])
-
-.controller('OptCtrl', function($scope) {
+ .controller('OptCtrl', function($scope) {
           $scope.options = {
             height: 150,
             toolbar: [
