@@ -23,7 +23,7 @@ angular
 		$scope.hintB = false
 		$scope.hintBg = false
 	}])
-  .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+  .config(['$stateProvider','$urlRouterProvider','$httpProvider',function($stateProvider,$urlRouterProvider,$httpProvider){
 		$stateProvider.state('cds',{
 			url:'/cds',
 			controller:'cdsController',
@@ -60,6 +60,7 @@ angular
 			templateUrl:'views/forgot.html'
 		});
 		$urlRouterProvider.when('','/login').otherwise('/error')
+		$httpProvider.interceptors.push('timestampMarker');
 	}]).controller('cdsController',['$scope','$state',function($scope,$state){
 		
 	}]).service('data',["$http",function($http){
@@ -96,3 +97,18 @@ angular
 		template:'<div  ng-show="hintB" class="hintBox">{{hintTitle}}</div>'
 	}
 })
+.factory('timestampMarker', ['$rootScope',function($rootScope) {
+    var timestampMarker = {
+        request: function(config) {
+        		$rootScope.loading=true;
+            config.requestTimestamp = new Date().getTime();
+            return config;
+        },
+        response: function(response) {
+        		$rootScope.loading=false;
+            response.config.responseTimestamp = new Date().getTime();
+            return response;
+        }
+    };
+    return timestampMarker;
+}]);

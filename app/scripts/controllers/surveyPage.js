@@ -44,6 +44,7 @@ angular.module("surveyTimeApp")
          }
 
       }
+
      //console.log($scope.updata.option)
       //console.log($scope.wcledata1)
       /*清数据*/
@@ -68,6 +69,7 @@ angular.module("surveyTimeApp")
       $scope.ind2=$scope.wcledata1.length+$scope.wcledata2.length;
       $scope.ind3=$scope.wcledata2.length+$scope.wcledata1.length+$scope.wcledata0.length
       
+
    },function(){})
    $scope.ssss='';
    /*单选*/
@@ -192,14 +194,16 @@ angular.module("surveyTimeApp")
             delete $scope.wcledata1[i].token
          }
       }
+
       //console.log($scope.updata)
+
 
       $http({
          method:'put',
          url:serve+'/item/'+id,
          data:$scope.updata
       }).then(function(e){
-         console.log(e)
+
          $scope.wcledata0.length=0;
          $scope.wcledata1.length=0;
          $scope.wcledata2.length=0;
@@ -211,6 +215,7 @@ angular.module("surveyTimeApp")
             $state.go('submit')
          }
          
+
       },function(){})
    }
    
