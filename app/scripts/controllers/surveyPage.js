@@ -75,9 +75,17 @@ angular.module("surveyTimeApp")
    /*单选*/
 
    $scope.cdsfuzhi=function(parentIndex,index){
+      //console.log($scope.wcledata1[parentIndex].opt.length)
+         for(var i=0;i<$scope.wcledata1[parentIndex].opt.length;i++){
+           // console.log(parentIndex,index)
+            if($scope.wcledata1[parentIndex].opt[i].check==1){
+               $scope.wcledata1[parentIndex].opt[i].check=-1;
+            }
+           // console.log($scope.wcledata1[parentIndex].opt[i].check)
+         }
       
       $scope.wcledata1[parentIndex].opt[index].check=1;
-      
+     // console.log(parentIndex,index,$scope.wcledata1)
    }
    /*多选*/ 
    $scope.ffn=function(parentIndex,index){
@@ -161,6 +169,7 @@ angular.module("surveyTimeApp")
          for(var j=0;j<$scope.wcledata1[i].opt.length;j++){
             if($scope.wcledata1[i].opt[j].check==1){
                $scope.wcledata1[i].opt[j].num+=1;
+               console.log(5)
             }
             if($scope.wcledata1[i].opt[j].check){
               delete $scope.wcledata1[i].opt[j].check
