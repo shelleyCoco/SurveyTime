@@ -32,9 +32,8 @@
 .cdsbottomri p{margin-top: .1rem;}
 
 .cdsbottomri{font-size:1.4rem;color:#eb6371;margin-left:4rem;margin-top:0.3rem;}
-.cdsbottomri:active{color:#f90;}
 .cdsbottomco {font-size:1.6rem;color:#eb6371;margin-left:4.5rem;margin-top:0.2rem;}
-.cdsbottomco:active{color:#f90;}
+
 .cdsfenxiang span{width:1rem;height:1rem;float:left;}
 .cdsqq{width:1rem;height:1rem; font-size: 1rem;}
 .cdsvx{background:url(../images/cdsvx.png);background-size: cover;}
