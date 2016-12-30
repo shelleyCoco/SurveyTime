@@ -82,7 +82,7 @@ angular.module("surveyTimeApp")
          }
       
       $scope.wcledata1[parentIndex].opt[index].check=1;
-     // console.log(parentIndex,index,$scope.wcledata1)
+      console.log(parentIndex,index,$scope.wcledata1)
    }
    /*多选*/ 
    $scope.ffn=function(parentIndex,index){
@@ -110,14 +110,14 @@ angular.module("surveyTimeApp")
              //console.log($scope.wcledata1[i].opt[j].check)
             reg+=parseInt($scope.wcledata1[i].opt[j].check);
          }
-         //console.log(tmp)
-        //console.log(reg)
+         console.log(tmp)
+        console.log(reg)
          if(reg==tmp){
              $scope.hintB=true;
              $timeout(function(){
                $scope.hintB = false;
             },1000)
-            //console.log(1)
+            console.log(1)
             return;
          }
       }
@@ -132,7 +132,7 @@ angular.module("surveyTimeApp")
             reg+=parseInt($scope.wcledata2[i].opt[j].check);
          }
          //console.log(tmp)
-        //console.log(reg)
+        console.log(reg)
          if(reg==tmp){
             $scope.hintB=true;
             $timeout(function(){
@@ -143,7 +143,7 @@ angular.module("surveyTimeApp")
       }
       for(var i=0;i<$scope.wcledata0.length;i++){
          if($scope.wcledata0[i].oop==''){
-            //console.log(3)
+            console.log(3)
             $scope.hintB=true;
             $timeout(function(){
                $scope.hintB = false;
@@ -153,7 +153,7 @@ angular.module("surveyTimeApp")
       }
       for(var i=0;i<$scope.wcledata3.length;i++){
          if($scope.wcledata3[i].oop==''){
-            //console.log(4)
+            console.log(4)
             $scope.hintB=true;
             $timeout(function(){
                $scope.hintB = false;
@@ -201,7 +201,7 @@ angular.module("surveyTimeApp")
          }
       }
 
-      //console.log($scope.updata)
+      console.log($scope.updata)
 
 
       $http({
@@ -214,7 +214,7 @@ angular.module("surveyTimeApp")
          $scope.wcledata1.length=0;
          $scope.wcledata2.length=0;
          $scope.wcledata3.length=0;
-
+console.log(e)
          if(localStorage.uid){
             $state.go('cds')
          }else{
@@ -222,7 +222,9 @@ angular.module("surveyTimeApp")
          }
          
 
-      },function(){})
+      },function(e){
+      	console.log(e)
+      })
    }
    
 	}])

@@ -2,8 +2,8 @@ angular.module("surveyTimeApp")
 	.constant("serve", "http://47.90.20.200:1602")
 	.controller('graph', ['$scope', 'data', 'url', '$stateParams', '$state', function($scope, data, url, $stateParams, $state) {
 		$scope.back = function() {
-				$state.go("cds");
-			}
+			$state.go("cds");
+		}
 		var index = $stateParams.index
 		$scope.json = {}
 		$scope.mesg = {};
@@ -47,6 +47,11 @@ angular.module("surveyTimeApp")
 					fillTextarea.push($scope.json.option[y])
 				}
 			}
+			//题号
+			$scope.ind0 = 0;
+			$scope.ind1 = listArr.length;
+			$scope.ind2 = fillText.length + listArr.length
+			console.log(fillText.length + ',' + $scope.ind2)
 			$scope.listArr = listArr
 			$scope.fillText = fillText
 			$scope.fillTextarea = fillTextarea

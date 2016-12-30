@@ -23,7 +23,7 @@
 						<h3>{{$index+1+ind1+'. '+item.title}} (多选)</h3>
 				    	<div ng-repeat="x in item.opt" class="page_radio">
 							<label for="{{item.token+$index}}" class="demo--label">
-							<input type="checkbox" name="" class="demo--radio" id="{{item.token+$index}}" ng-click="ffn($parent.$index,$index)" />
+							<input type="checkbox" name="" class="demo--radio" id="{{item.token+$index}}" ng-click="ffn($parent.$index,$index)"/>
 							<span class="demo--checkbox demo--radioInput"></span>{{x.op}}</label>
 						</div>
 					</div>
