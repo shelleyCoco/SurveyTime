@@ -2,9 +2,15 @@
 .bodyf{transition: 0.3s all ease;background:#f5f5f5;min-height:100vh;padding-top:4.9rem;padding-bottom:2.5rem;position:relative;height:100%;width: 100%;}
 
 .cdsdada{width:100%;height:3.2rem;border-bottom:0.025rem solid #ccc;line-height:3.2rem;position:fixed;top:0;background:#fff;z-index:2;}
-.cdsdada i{float:left;font-size:1.5rem;margin-left:2.15rem;}
+.cdsdada i{float:left;font-size:1.5rem;width: 8.4rem;
+	position: absolute;
+	left: 50%;
+	margin-left: -4.2rem;}
 .cdsdada .logo{
-	margin-left: 4rem;
+	width: 8.4rem;
+	position: absolute;
+	left: 50%;
+	margin-left: -4.2rem;
 }
 .bodyf .noList{
 	text-align: center;font: 1rem "微软雅黑";
@@ -22,9 +28,10 @@
 }
 .classcds{padding-top:3.2rem; transition: 0.5s all ease}
 .cdsContent p i{font-size:0.8rem;font-weight:bold;}
+.cdsp_bord{margin-bottom: 0.5rem;}
 .cdsContent .cdsspan{display:block;position: absolute;right: 1rem;top: 1rem;}
 .cdsfenxiang{width:100%;border-top:0.025rem solid #ccc;}
-.cdsfenxiang span{margin: 0.5rem 0.5rem 0 0.5rem;float:left;background-repeat: no-repeat;}
+.cdsfenxiang span{float:left;background-repeat: no-repeat;}
 
 .cdsposition{width:100%;height:2.5rem;background:#fff;position:fixed;bottom: 0;left:0;z-index: 999;}
 .cdsbottom{width:100%;height: 100%;}
@@ -34,10 +41,10 @@
 .cdsbottomri{font-size:1.4rem;color:#eb6371;margin-left:4rem;margin-top:0.3rem;}
 .cdsbottomco {font-size:1.6rem;color:#eb6371;margin-left:4.5rem;margin-top:0.2rem;}
 
-.cdsfenxiang span{width:1rem;height:1rem;float:left;}
-.cdsqq{width:1rem;height:1rem; font-size: 1rem;}
+.cdsfenxiang span{height:1rem;float:right;}
+.cdsqq{width:1rem;height:1rem; font-size: 0.8rem;margin-right: 1rem;margin-top: 0.5rem;}
 .cdsvx{background:url(../images/cdsvx.png);background-size: cover;}
-.cdsfenxiang .cdsxq{width:2rem;margin-left:3rem;}
+.cdsfenxiang .cdsxq{font-size: 0.6rem;margin-top: 0.5rem;margin-right: 1rem;}
 .cdsnone{width:2rem;height:2rem;position:absolute;right: 0;top:0.75rem;background:#fff;transition: 0.5s all ease}
 
 
