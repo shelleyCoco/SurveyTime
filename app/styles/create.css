@@ -163,3 +163,11 @@ input.ng-invalid{
 	z-index: 1000;
 	background: rgba(255,255,255,0);
 }
+.yky_loading{
+	position: fixed;
+	width: 40%;
+	height: 40%;
+	top: 2%;
+	left: 30%;
+	opacity: 0.8;
+}
