@@ -100,10 +100,11 @@ angular
 		template:'<div  ng-show="hintB" class="hintBox">{{hintTitle}}</div>'
 	}
 })
-.factory('timestampMarker', ['$rootScope',function($rootScope) {
+.factory('timestampMarker', ['$rootScope','$q',function($rootScope,$q) {
     var timestampMarker = {
         request: function(config) {
         		$rootScope.loading=true;
+//      		window.location.href="404.html"
             config.requestTimestamp = new Date().getTime();
             return config;
         },
@@ -111,7 +112,11 @@ angular
         		$rootScope.loading=false;
             response.config.responseTimestamp = new Date().getTime();
             return response;
-        }
+        },
+        responseError: function(re){
+							window.location.href="404.html";
+            return $q.reject(re);
+        		}
     };
     return timestampMarker;
 }]);
