@@ -13,16 +13,12 @@ $(function() {
 	window.onresize = function() {
 		document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + 'px';
 	}
-	window.onbeforeunload=onclose;
-
-
 })
-function onclose() {
-	alert()
-	localStorage.clear()
-}
+window.onunload = function() {  
+   localStorage.clear()
+}  
 angular
-  .module('surveyTimeApp', ['ui.router',"chart.js",'summernote','ngSanitize'])
+  .module('surveyTimeApp', ['ui.router',"chart.js",'ngSanitize','summernote'])
   .constant('url','http://47.90.20.200:1602/')
   .controller('ctrl',['$scope',function($scope){
 		$scope.hintTitle = '';
@@ -104,10 +100,11 @@ angular
 		template:'<div  ng-show="hintB" class="hintBox">{{hintTitle}}</div>'
 	}
 })
-.factory('timestampMarker', ['$rootScope',function($rootScope) {
+.factory('timestampMarker', ['$rootScope','$q',function($rootScope,$q) {
     var timestampMarker = {
         request: function(config) {
         		$rootScope.loading=true;
+//      		window.location.href="404.html"
             config.requestTimestamp = new Date().getTime();
             return config;
         },
@@ -115,7 +112,11 @@ angular
         		$rootScope.loading=false;
             response.config.responseTimestamp = new Date().getTime();
             return response;
-        }
+        },
+        responseError: function(re){
+							window.location.href="404.html";
+            return $q.reject(re);
+        		}
     };
     return timestampMarker;
 }]);
