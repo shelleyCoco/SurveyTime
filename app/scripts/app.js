@@ -16,7 +16,7 @@ $(function() {
 })
 
 angular
-  .module('surveyTimeApp', ['ui.router',"chart.js",'summernote','ngSanitize'])
+  .module('surveyTimeApp', ['ui.router',"chart.js",'ngSanitize','summernote'])
   .constant('url','http://47.90.20.200:1602/')
   .controller('ctrl',['$scope',function($scope){
 		$scope.hintTitle = '';

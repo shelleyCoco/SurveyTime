@@ -29,8 +29,8 @@ angular.module("surveyTimeApp")
             
             $scope.updata.option[i].token='asd'+i;
             $scope.wcledata1.push($scope.updata.option[i])
-            for(var i=0;i<$scope.wcledata1.length;i++){
-               $scope.wcledata1[i].check=-1;
+            for(var j=0;j<$scope.wcledata1.length;j++){
+               $scope.wcledata1[j].check=-1;
             }
          }else if($scope.updata.option[i].type==2){
             for(var j=0;j<$scope.updata.option[i].opt.length;j++){
