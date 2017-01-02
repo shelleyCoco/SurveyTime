@@ -18,7 +18,6 @@ $(function() {
 
 })
 function onclose() {
-	alert()
 	localStorage.clear()
 }
 angular
@@ -108,7 +107,6 @@ angular
     var timestampMarker = {
         request: function(config) {
         		$rootScope.loading=true;
-//      		window.location.href="404.html"
             config.requestTimestamp = new Date().getTime();
             return config;
         },
@@ -118,7 +116,7 @@ angular
             return response;
         },
         responseError: function(re){
-							window.location.href="404.html";
+						window.location.href="404.html";
             return $q.reject(re);
         		}
     };
