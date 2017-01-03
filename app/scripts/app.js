@@ -13,10 +13,9 @@ $(function() {
 	window.onresize = function() {
 		document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + 'px';
 	}
+	window.onbeforeunload=onclose;
 })
-//window.onbeforeunload = function() {  
-// localStorage.clear()
-//}  
+
 angular
   .module('surveyTimeApp', ['ui.router',"chart.js",'ngSanitize','summernote'])
   .constant('url','http://47.90.20.200:1602/')
@@ -104,7 +103,6 @@ angular
     var timestampMarker = {
         request: function(config) {
         		$rootScope.loading=true;
-//      		window.location.href="404.html"
             config.requestTimestamp = new Date().getTime();
             return config;
         },
@@ -114,7 +112,12 @@ angular
             return response;
         },
         responseError: function(re){
+        	if(re.status==400){
+							
+						}else{
 							window.location.href="404.html";
+						}
+        	$rootScope.loading=false;
             return $q.reject(re);
         		}
     };

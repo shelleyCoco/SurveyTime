@@ -15,7 +15,8 @@
 	</div>
     <ul class="cdsContent">
         <li ng-repeat="x in json |filter:{title:sea}">
-            <p ui-sref="graph({index:x.id})">
+            <!--<p ui-sref="graph({index:x.id})">-->
+            <p ui-sref="graph({index:x.id})" class="cdsp_bord">
                 <i>{{x.title | cdssub}}</i>
             </p>
             <span class="cdsspan glyphicon glyphicon-remove" ng-click="shanchu($index)"></span>
