@@ -14,9 +14,9 @@ $(function() {
 		document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + 'px';
 	}
 })
-window.onunload = function() {  
-   localStorage.clear()
-}  
+//window.onbeforeunload = function() {  
+// localStorage.clear()
+//}  
 angular
   .module('surveyTimeApp', ['ui.router',"chart.js",'ngSanitize','summernote'])
   .constant('url','http://47.90.20.200:1602/')
