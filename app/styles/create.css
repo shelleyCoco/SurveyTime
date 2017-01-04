@@ -27,7 +27,7 @@ dt {
   box-sizing: border-box;
 }
 input.ng-valid{
-	border: 1px solid green;
+	border: 1px solid #337ab7;
 }
 input.ng-invalid{
 	border: 1px solid #737373;

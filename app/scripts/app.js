@@ -112,11 +112,9 @@ angular
             return response;
         },
         responseError: function(re){
-        	if(re.status==400){
-							
-						}else{
-							window.location.href="404.html";
-						}
+        	if(re.status==404){
+				window.location.href="404.html";	
+				}
         	$rootScope.loading=false;
             return $q.reject(re);
         		}

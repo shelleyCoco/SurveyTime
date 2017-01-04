@@ -4,12 +4,22 @@
 </div>
 <div class='container '>
 	<h1>标题：{{json.title}}</h1>
-	<div class="panel panel-default" ng-repeat='m in listArr'>
-		<div class="panel-heading titleBg">{{$index+1+ind0}}.{{m.title}}</div>
-		<div class="panel-body graph-panel">
+	<div class=" panel-default panel" ng-repeat='m in listArr'>
+		<div class="panel-heading titleBg">{{$index+1+ind0}}.{{m.title}}  (选择)</div>
+		<div class="panel-body graph-panel ng-invalid">
 			<p class="graph-panel_p" ng-show='noNum'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
-			<canvas ng-hide='noNum' id="doughnut" class="chart chart-doughnut" chart-data="mesg.arr2[$index]" chart-labels="mesg.arr[$index]">
+			<div class="row">
+			<div class="wrapCanvas col-xs-8">
+				<canvas ng-hide='noNum' id="doughnut" class="chart chart-bar" style="width: 80%;" chart-data="mesg.arr2[$index]" chart-colors=colors chart-labels="mesg.arr[$index]">
 </canvas>
+			</div>
+			<div ng-hide='noNum' class="wrapTitle col-xs-2">
+				<p>图例</p>
+				<ul class="legend">
+					<li ng-repeat = 'a in mesg.arr2[$index] track by $index' ><span style="background: {{colors[$index]}};"></span>{{a}}</li>
+				</ul>
+			</div>
+			</div>
 		</div>
 	</div>
 	<div class="panel panel-default" ng-repeat='m in fillText'>

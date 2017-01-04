@@ -30,6 +30,8 @@ angular.module("surveyTimeApp")
 		$scope.listTextarea = {
 			data: []
 		}
+		
+		$scope.colors = ['#FD2222','#1155CC','#F30A92','#71F2CB','#DB49FA','#CBF67B','#FD5859','#5896CC','#F20A12','#5B9C01','#286BE4','#D1C7A4','#5A6382']
 		var total = 0
 		data.get(url + 'item/' + index, function(e) {
 			$scope.json = e.data
@@ -51,7 +53,7 @@ angular.module("surveyTimeApp")
 			$scope.ind0 = 0;
 			$scope.ind1 = listArr.length;
 			$scope.ind2 = fillText.length + listArr.length
-			console.log(fillText.length + ',' + $scope.ind2)
+//			console.log(fillText.length + ',' + $scope.ind2)
 			$scope.listArr = listArr
 			$scope.fillText = fillText
 			$scope.fillTextarea = fillTextarea
