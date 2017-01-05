@@ -3,12 +3,18 @@ angular
 	.module('surveyTimeApp')
 	.controller('login', ['$scope', '$http', 'url', '$state', '$timeout',function($scope, $http, url, $state,timeout) {
 		$scope.code = {}
+		
 		$scope.loginuser = '';
 		$scope.loginpass = '';
 		$scope.loginpic = '';
 		var t = timeout(function() {
 			$scope.createCode()
 		}, 30)
+		if(localStorage.usname != ''&& localStorage.uspass !=''){
+			$scope.loginuser = localStorage.usname;
+			$scope.loginpass = localStorage.uspass;
+			console.log($scope.loginuser+','+$scope.loginpass)
+		}
 		$scope.createCode = function(){
 			code = "";
 			var codeLength = 4; //验证码的长度
@@ -85,6 +91,9 @@ angular
 					$state.go('cds')
 				}, function(e) {
 					$scope.hintTitle = '用户名或密码不正确';
+					$scope.loginuser = '';
+						$scope.loginpass = '';
+						$scope.loginpic = '';
 					$scope.hintB = true
 					timeout(function(){
 						$scope.hintB = false;

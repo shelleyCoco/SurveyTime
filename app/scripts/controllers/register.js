@@ -43,6 +43,8 @@ angular.module('surveyTimeApp').controller('register', ['$scope', '$http', '$fil
 						'password': $scope.pw
 					}
 				}).then(function() {
+					localStorage.usname = $scope.username;
+					localStorage.uspass = $scope.pw;
 					$scope.hintTitle='注册成功！'
 					$state.go('login')
 					$scope.hintB = true;
@@ -51,6 +53,9 @@ angular.module('surveyTimeApp').controller('register', ['$scope', '$http', '$fil
 					},1000)
 				}, function() {
 					$scope.hintTitle='用户名已有，请重新输入！';
+					$scope.username = '';
+					$scope.pw = '';
+					$scope.pw1 = ''
 					$scope.hintB = true;
                    	$timeout(function(){
 						$scope.hintB = false;

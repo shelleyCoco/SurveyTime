@@ -34,10 +34,11 @@
 	margin: 0 auto;
 	line-height: 2.5rem;
 	color:#000;
+	font-weight: bold;
 	font-size:1.3rem;
 	text-align: center;
 	font-family: "微软雅黑";
-	margin-top: 3rem;
+	margin-top: 2.1rem;
 	word-wrap: break-word;
 	padding: 0 2rem;
 	letter-spacing: 0.1rem;
@@ -51,7 +52,7 @@
 	border-style: solid;
 	border-image: url(../images/wjdc.png) 25 fill repeat;
 	margin-bottom: 2rem;
-	margin-top: 10rem;
+	margin-top: 7rem;
 }
 .neir {
 	height: auto;
@@ -169,7 +170,7 @@
 	width: 10rem;
 	height: 3rem;
 	position: fixed;
-	top: 46%;
+	top: 41%;
 	left: 50%;
 	margin-left: -5rem;
 	background: rgba(205,205,205,.8);
@@ -177,4 +178,5 @@
 	text-align: center;
 	line-height: 3rem;
 	border-radius: .25rem;
+	z-index: 1;
 }

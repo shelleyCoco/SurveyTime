@@ -15,9 +15,7 @@ $(function() {
 	}
 	window.onbeforeunload=onclose;
 })
-function onclose() {
-	localStorage.clear()
-}
+
 angular
   .module('surveyTimeApp', ['ui.router',"chart.js",'ngSanitize','summernote'])
   .constant('url','http://47.90.20.200:1602/')
@@ -114,11 +112,9 @@ angular
             return response;
         },
         responseError: function(re){
-        	if(re.status==400){
-							
-						}else{
-							window.location.href="404.html";
-						}
+        	if(re.status==404){
+				window.location.href="404.html";	
+				}
         	$rootScope.loading=false;
             return $q.reject(re);
         		}

@@ -27,7 +27,7 @@ dt {
   box-sizing: border-box;
 }
 input.ng-valid{
-	border: 1px solid green;
+	border: 1px solid #337ab7;
 }
 input.ng-invalid{
 	border: 1px solid #737373;
@@ -58,6 +58,16 @@ input.ng-invalid{
 	text-align: center;
 	line-height: 3rem;
 	border-radius: .25rem;
+}
+.demo--label input{
+	visibility: hidden;
+}
+.yky_xx .radio-inline{
+	padding: 0;
+	margin: 0;
+}
+.yky_mt2 .leix{
+	margin: 0;
 }
 .yky_bg input{
 	background: none;
@@ -101,7 +111,7 @@ input.ng-invalid{
 }
 .yky_mt2{
 	margin-top: 0.8rem;
-	padding: 0.6rem 0.8rem;
+	padding: 1rem 0.8rem;
 	border: 1px solid #737373;
 }
 .yky_add{
