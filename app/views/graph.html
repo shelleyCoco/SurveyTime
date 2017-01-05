@@ -26,14 +26,14 @@
 		<div class="panel-heading titleBg">{{$index+1+ind1}}.{{m.title}}  (填空)</div>
 		<div class="panel-body graph-panel">
 			<p class="graph-panel_p" ng-show='noNumText'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
-			<p ng-hide = 'noNumText'>{{listText.data[$index]}}</p>
+			<div class="textCont" ng-hide = 'noNumText' ng-repeat= 'item in listText.data[$index]'><span>{{$index+1+'.'}}</span><div ng-bind='item'></div></div>
 		</div>
 	</div>
 	<div class="panel panel-default" ng-repeat='m in fillTextarea'>
 		<div class="panel-heading titleBg">{{$index+1+ind2}}.{{m.title}}  (简答)</div>
 		<div class="panel-body graph-panel">
 			<p class="graph-panel_p" ng-show='noNumTextarea'>还没有统计数据噢/(ㄒoㄒ)/~~</p>
-			<p ng-hide = 'noNumText'  ng-bind-html='listTextarea.data[$index]'></p>
+			<div class="textCont" ng-hide = 'noNumText' ng-repeat='item in listTextarea.data[$index]'><span>{{$index+1+'.'}}</span><div ng-bind-html='item'></div></div>
 		</div>
 	</div>
 	<div class='noList' ng-show='noList'>

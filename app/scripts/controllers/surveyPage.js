@@ -58,7 +58,7 @@ angular.module("surveyTimeApp")
          }
       }
       for(var i=0;i<$scope.wcledata3.length;i++){
-         $scope.wcledata3[i].oop=[];
+        // $scope.wcledata3[i].oop=[];
          if($scope.wcledata3[i].str!=''){
             $scope.wcledata3[i].str='';
          }

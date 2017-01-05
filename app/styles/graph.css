@@ -32,6 +32,20 @@
 .graph-panel_p{
 	text-align: center;
 }
+.panel-body>div{
+	font-size: .48rem;
+	overflow: hidden;
+}
+.panel-body .textCont{
+	margin-left: .65rem;
+}
+.panel-body div span,.panel-body div div p{
+	float: left;
+	
+}
+.panel-body div div p{
+	width: 12.5rem;
+}
 .wrapCanvas{
 	width: 80%;
 }
@@ -57,7 +71,7 @@
 }
 .legend li:nth-child(2n){
 	float: right;
-	margin-right: 0.8rem;
+	margin-right: 0.5rem;
 }
 .legend li span {
     display: block;
