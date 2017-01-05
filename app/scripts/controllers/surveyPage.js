@@ -10,6 +10,7 @@ angular.module("surveyTimeApp")
    $scope.wcledata2=[];
    $scope.wcledata3=[];
    $scope.data=[];
+   $scope.arr=[];
    $http({
    	method:'get',
    	url:serve+'/item/'+id,
@@ -24,6 +25,7 @@ angular.module("surveyTimeApp")
          $scope.data.push(i);
 
          if($scope.updata.option[i].type==0){
+            $scope.updata.option[i].str='';
             $scope.wcledata0.push($scope.updata.option[i])
          }else if($scope.updata.option[i].type==1){
             
@@ -40,21 +42,25 @@ angular.module("surveyTimeApp")
             $scope.updata.option[i].token='asdd'+i;
             $scope.wcledata2.push($scope.updata.option[i])
          }else{
+            $scope.updata.option[i].str='';
             $scope.wcledata3.push($scope.updata.option[i])
          }
 
       }
+      
      //console.log($scope.updata.option)
-      //console.log($scope.wcledata1)
+      console.log($scope.wcledata0)
+      console.log($scope.wcledata3)
       /*清数据*/
       for(var i=0;i<$scope.wcledata0.length;i++){
-         if($scope.wcledata0[i].oop!=''){
-            $scope.wcledata0[i].oop='';
+         if($scope.wcledata0[i].str!=''){
+            $scope.wcledata0[i].str='';
          }
       }
       for(var i=0;i<$scope.wcledata3.length;i++){
-         if($scope.wcledata3[i].oop!=''){
-            $scope.wcledata3[i].oop='';
+         $scope.wcledata3[i].oop=[];
+         if($scope.wcledata3[i].str!=''){
+            $scope.wcledata3[i].str='';
          }
       }
       for(var i=0;i<$scope.wcledata1.length;i++){
@@ -110,14 +116,14 @@ angular.module("surveyTimeApp")
              //console.log($scope.wcledata1[i].opt[j].check)
             reg+=parseInt($scope.wcledata1[i].opt[j].check);
          }
-         console.log(tmp)
-        console.log(reg)
+        // console.log(tmp)
+       // console.log(reg)
          if(reg==tmp){
              $scope.hintB=true;
              $timeout(function(){
                $scope.hintB = false;
             },1000)
-            console.log(1)
+           // console.log(1)
             return;
          }
       }
@@ -132,7 +138,7 @@ angular.module("surveyTimeApp")
             reg+=parseInt($scope.wcledata2[i].opt[j].check);
          }
          //console.log(tmp)
-        console.log(reg)
+        //console.log(reg)
          if(reg==tmp){
             $scope.hintB=true;
             $timeout(function(){
@@ -141,8 +147,9 @@ angular.module("surveyTimeApp")
             return;
          }
       }
+      /*填空*/
       for(var i=0;i<$scope.wcledata0.length;i++){
-         if($scope.wcledata0[i].oop==''){
+         if($scope.wcledata0[i].str==''){
             console.log(3)
             $scope.hintB=true;
             $timeout(function(){
@@ -152,7 +159,7 @@ angular.module("surveyTimeApp")
          }
       }
       for(var i=0;i<$scope.wcledata3.length;i++){
-         if($scope.wcledata3[i].oop==''){
+         if($scope.wcledata3[i].str==''){
             console.log(4)
             $scope.hintB=true;
             $timeout(function(){
@@ -161,12 +168,24 @@ angular.module("surveyTimeApp")
            return;
          }
       }
+      for(var i=0;i<$scope.wcledata3.length;i++){
+         if($scope.wcledata3[i].oop==''){
+            $scope.wcledata3[i].oop=[];
+         }
+         $scope.wcledata3[i].oop.push($scope.wcledata3[i].str)
+      }
+      for(var i=0;i<$scope.wcledata0.length;i++){
+         if($scope.wcledata0[i].oop==''){
+            $scope.wcledata0[i].oop=[];
+         }
+         $scope.wcledata0[i].oop.push($scope.wcledata0[i].str)
+      }
       /*单选*/
       for(var i=0;i<$scope.wcledata1.length;i++){        
          for(var j=0;j<$scope.wcledata1[i].opt.length;j++){
             if($scope.wcledata1[i].opt[j].check==1){
                $scope.wcledata1[i].opt[j].num+=1;
-               console.log(5)
+              
             }
             if($scope.wcledata1[i].opt[j].check){
               delete $scope.wcledata1[i].opt[j].check
@@ -193,6 +212,18 @@ angular.module("surveyTimeApp")
             delete $scope.wcledata2[i].token
          }
       }
+      /*d填*/
+      for(var i=0;i<$scope.wcledata0.length;i++){
+         if($scope.wcledata0[i].str){
+            delete $scope.wcledata0[i].str
+         }
+      }
+      /*d简*/
+      for(var i=0;i<$scope.wcledata3.length;i++){
+         if($scope.wcledata3[i].str){
+            delete $scope.wcledata3[i].str
+         }
+      }
       /*d单*/
       for(var i=0;i<$scope.wcledata1.length;i++){
          if($scope.wcledata1[i].check){
@@ -202,7 +233,7 @@ angular.module("surveyTimeApp")
       }
 
       console.log($scope.updata)
-
+      
 
       $http({
          method:'put',
@@ -214,7 +245,7 @@ angular.module("surveyTimeApp")
          $scope.wcledata1.length=0;
          $scope.wcledata2.length=0;
          $scope.wcledata3.length=0;
-console.log(e)
+//console.log(e)
          if(localStorage.uid){
             $state.go('cds')
          }else{
@@ -223,7 +254,7 @@ console.log(e)
          
 
       },function(e){
-      	console.log(e)
+      	//console.log(e)
       })
    }
    
