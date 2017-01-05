@@ -59,6 +59,16 @@ input.ng-invalid{
 	line-height: 3rem;
 	border-radius: .25rem;
 }
+.demo--label input{
+	visibility: hidden;
+}
+.yky_xx .radio-inline{
+	padding: 0;
+	margin: 0;
+}
+.yky_mt2 .leix{
+	margin: 0;
+}
 .yky_bg input{
 	background: none;
 	color: #000;
@@ -101,7 +111,7 @@ input.ng-invalid{
 }
 .yky_mt2{
 	margin-top: 0.8rem;
-	padding: 0.6rem 0.8rem;
+	padding: 1rem 0.8rem;
 	border: 1px solid #737373;
 }
 .yky_add{

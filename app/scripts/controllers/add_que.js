@@ -68,10 +68,10 @@
 		<div class="form-group"><label for="">问题类型</label></div>\
 		<div class="row yky_h24">\
 		<div class="col-xs-10 yky_xx">\
-		<div class="radio-inline"> <label> <input type="radio" name="optionsRadios{{$index}}" id="optionsRadios1" value="option1" ng-click="xuan1()" ng-checked="true"> 填空 </label> </div>\
-		<div class="radio-inline"> <label> <input type="radio" name="optionsRadios{{$index}}" id="optionsRadios2" value="option2" ng-click="xuan2()"> 单选 </label> </div>\
-		<div class="radio-inline"> <label> <input type="radio" name="optionsRadios{{$index}}" id="optionsRadios3" value="option3" ng-click="xuan3()"> 多选 </label> </div>\
-		<div class="radio-inline"> <label> <input type="radio" name="optionsRadios{{$index}}" id="optionsRadios4" value="option4" ng-click="xuan4()"> 简答 </label> </div>\
+		<div class="radio-inline"> <label class="demo--label" for="optionsRadios1"> <input type="radio" name="optionsRadios{{$index}}" id="optionsRadios1" value="option1" ng-click="xuan1()" ng-checked="true"> <div class=" demo--radioInput"></div>填空 </label> </div>\
+		<div class="radio-inline"> <label class="demo--label" for="optionsRadios2"> <input type="radio" name="optionsRadios{{$index}}" id="optionsRadios2" value="option2" ng-click="xuan2()"> <div class=" demo--radioInput"></div> 单选</label> </div>\
+		<div class="radio-inline"> <label class="demo--label" for="optionsRadios3"> <input type="radio" name="optionsRadios{{$index}}" id="optionsRadios3" value="option3" ng-click="xuan3()"> <div class=" demo--radioInput"></div> 多选 </label> </div>\
+		<div class="radio-inline"> <label class="demo--label" for="optionsRadios4"> <input type="radio" name="optionsRadios{{$index}}" id="optionsRadios4" value="option4" ng-click="xuan4()"> <div class=" demo--radioInput"></div> 简答</label> </div>\
 		</div>\
 		<div class="col-xs-2" ng-if="bool2">\
 		<div style="color:#999" class="glyphicon glyphicon-plus" ng-click="add_danx()"></div>\
